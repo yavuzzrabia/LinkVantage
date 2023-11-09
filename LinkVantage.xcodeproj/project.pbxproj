@@ -7,15 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE831F422AFBB91A00F3E566 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE831F412AFBB91A00F3E566 /* Onboarding.storyboard */; };
+		BE831F442AFBB92E00F3E566 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE831F432AFBB92E00F3E566 /* OnboardingViewController.swift */; };
+		BE831F462AFBB93E00F3E566 /* Authentication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE831F452AFBB93E00F3E566 /* Authentication.storyboard */; };
 		BE9F42EA2AFBAADE00406755 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9F42E92AFBAADE00406755 /* AppDelegate.swift */; };
 		BE9F42EC2AFBAADE00406755 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9F42EB2AFBAADE00406755 /* SceneDelegate.swift */; };
 		BE9F42EE2AFBAADE00406755 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9F42ED2AFBAADE00406755 /* ViewController.swift */; };
 		BE9F42F12AFBAADE00406755 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE9F42EF2AFBAADE00406755 /* Main.storyboard */; };
 		BE9F42F32AFBAAE000406755 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE9F42F22AFBAAE000406755 /* Assets.xcassets */; };
 		BE9F42F62AFBAAE000406755 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE9F42F42AFBAAE000406755 /* LaunchScreen.storyboard */; };
+		BEEE86102AFCFA240076E557 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEE860F2AFCFA240076E557 /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BE831F412AFBB91A00F3E566 /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
+		BE831F432AFBB92E00F3E566 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		BE831F452AFBB93E00F3E566 /* Authentication.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Authentication.storyboard; sourceTree = "<group>"; };
 		BE9F42E62AFBAADE00406755 /* LinkVantage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LinkVantage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE9F42E92AFBAADE00406755 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BE9F42EB2AFBAADE00406755 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +31,7 @@
 		BE9F42F22AFBAAE000406755 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BE9F42F52AFBAAE000406755 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BE9F42F72AFBAAE000406755 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BEEE860F2AFCFA240076E557 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +45,42 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BE831F3D2AFBB8C000F3E566 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				BE9F42EF2AFBAADE00406755 /* Main.storyboard */,
+				BE9F42ED2AFBAADE00406755 /* ViewController.swift */,
+				BE831F402AFBB8F800F3E566 /* Onboarding */,
+				BE831F3F2AFBB8EC00F3E566 /* Authentication */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		BE831F3E2AFBB8D600F3E566 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		BE831F3F2AFBB8EC00F3E566 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				BE831F452AFBB93E00F3E566 /* Authentication.storyboard */,
+				BEEE860F2AFCFA240076E557 /* LoginViewController.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		BE831F402AFBB8F800F3E566 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				BE831F412AFBB91A00F3E566 /* Onboarding.storyboard */,
+				BE831F432AFBB92E00F3E566 /* OnboardingViewController.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
 		BE9F42DD2AFBAADE00406755 = {
 			isa = PBXGroup;
 			children = (
@@ -58,8 +102,8 @@
 			children = (
 				BE9F42E92AFBAADE00406755 /* AppDelegate.swift */,
 				BE9F42EB2AFBAADE00406755 /* SceneDelegate.swift */,
-				BE9F42ED2AFBAADE00406755 /* ViewController.swift */,
-				BE9F42EF2AFBAADE00406755 /* Main.storyboard */,
+				BE831F3D2AFBB8C000F3E566 /* Scenes */,
+				BE831F3E2AFBB8D600F3E566 /* Extensions */,
 				BE9F42F22AFBAAE000406755 /* Assets.xcassets */,
 				BE9F42F42AFBAAE000406755 /* LaunchScreen.storyboard */,
 				BE9F42F72AFBAAE000406755 /* Info.plist */,
@@ -128,6 +172,8 @@
 				BE9F42F62AFBAAE000406755 /* LaunchScreen.storyboard in Resources */,
 				BE9F42F32AFBAAE000406755 /* Assets.xcassets in Resources */,
 				BE9F42F12AFBAADE00406755 /* Main.storyboard in Resources */,
+				BE831F422AFBB91A00F3E566 /* Onboarding.storyboard in Resources */,
+				BE831F462AFBB93E00F3E566 /* Authentication.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,9 +184,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BEEE86102AFCFA240076E557 /* LoginViewController.swift in Sources */,
 				BE9F42EE2AFBAADE00406755 /* ViewController.swift in Sources */,
 				BE9F42EA2AFBAADE00406755 /* AppDelegate.swift in Sources */,
 				BE9F42EC2AFBAADE00406755 /* SceneDelegate.swift in Sources */,
+				BE831F442AFBB92E00F3E566 /* OnboardingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
