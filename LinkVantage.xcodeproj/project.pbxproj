@@ -12,6 +12,9 @@
 		BE831F462AFBB93E00F3E566 /* Authentication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE831F452AFBB93E00F3E566 /* Authentication.storyboard */; };
 		BE84258C2B150EDF00D8B431 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE84258B2B150EDF00D8B431 /* UserDefaults.swift */; };
 		BE84258E2B1518B300D8B431 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE84258D2B1518B300D8B431 /* SignUpViewController.swift */; };
+		BE8425902B15235C00D8B431 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE84258F2B15235C00D8B431 /* ForgotPasswordViewController.swift */; };
+		BE8425922B15238600D8B431 /* PasswordCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8425912B15238600D8B431 /* PasswordCodeViewController.swift */; };
+		BE8425942B1523EF00D8B431 /* NewPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8425932B1523EF00D8B431 /* NewPasswordViewController.swift */; };
 		BE9F42EA2AFBAADE00406755 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9F42E92AFBAADE00406755 /* AppDelegate.swift */; };
 		BE9F42EC2AFBAADE00406755 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9F42EB2AFBAADE00406755 /* SceneDelegate.swift */; };
 		BE9F42EE2AFBAADE00406755 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9F42ED2AFBAADE00406755 /* ViewController.swift */; };
@@ -27,6 +30,9 @@
 		BE831F452AFBB93E00F3E566 /* Authentication.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Authentication.storyboard; sourceTree = "<group>"; };
 		BE84258B2B150EDF00D8B431 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		BE84258D2B1518B300D8B431 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		BE84258F2B15235C00D8B431 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
+		BE8425912B15238600D8B431 /* PasswordCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordCodeViewController.swift; sourceTree = "<group>"; };
+		BE8425932B1523EF00D8B431 /* NewPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPasswordViewController.swift; sourceTree = "<group>"; };
 		BE9F42E62AFBAADE00406755 /* LinkVantage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LinkVantage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE9F42E92AFBAADE00406755 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BE9F42EB2AFBAADE00406755 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -72,7 +78,10 @@
 			isa = PBXGroup;
 			children = (
 				BE831F452AFBB93E00F3E566 /* Authentication.storyboard */,
+				BE8425932B1523EF00D8B431 /* NewPasswordViewController.swift */,
 				BE84258D2B1518B300D8B431 /* SignUpViewController.swift */,
+				BE8425912B15238600D8B431 /* PasswordCodeViewController.swift */,
+				BE84258F2B15235C00D8B431 /* ForgotPasswordViewController.swift */,
 				BEEE860F2AFCFA240076E557 /* LoginViewController.swift */,
 			);
 			path = Authentication;
@@ -190,12 +199,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE8425902B15235C00D8B431 /* ForgotPasswordViewController.swift in Sources */,
 				BEEE86102AFCFA240076E557 /* LoginViewController.swift in Sources */,
 				BE84258E2B1518B300D8B431 /* SignUpViewController.swift in Sources */,
 				BE9F42EE2AFBAADE00406755 /* ViewController.swift in Sources */,
 				BE84258C2B150EDF00D8B431 /* UserDefaults.swift in Sources */,
 				BE9F42EA2AFBAADE00406755 /* AppDelegate.swift in Sources */,
+				BE8425922B15238600D8B431 /* PasswordCodeViewController.swift in Sources */,
 				BE9F42EC2AFBAADE00406755 /* SceneDelegate.swift in Sources */,
+				BE8425942B1523EF00D8B431 /* NewPasswordViewController.swift in Sources */,
 				BE831F442AFBB92E00F3E566 /* OnboardingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
