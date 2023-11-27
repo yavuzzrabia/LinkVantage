@@ -15,8 +15,11 @@ class ViewController: UIViewController {
     }
 
     override func viewDidAppear(_ animated: Bool) {
-        self.performSegue(withIdentifier: "toOnboarding", sender: nil)
-//        self.performSegue(withIdentifier: "toAuthentication", sender: nil)
+        if UserDefaults.standard.hasOnboarded {
+            self.performSegue(withIdentifier: "toAuthentication", sender: nil)
+        } else {
+            self.performSegue(withIdentifier: "toOnboarding", sender: nil)
+        }
     }
 
 }

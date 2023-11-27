@@ -10,6 +10,7 @@
 		BE831F422AFBB91A00F3E566 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE831F412AFBB91A00F3E566 /* Onboarding.storyboard */; };
 		BE831F442AFBB92E00F3E566 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE831F432AFBB92E00F3E566 /* OnboardingViewController.swift */; };
 		BE831F462AFBB93E00F3E566 /* Authentication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE831F452AFBB93E00F3E566 /* Authentication.storyboard */; };
+		BE84258C2B150EDF00D8B431 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE84258B2B150EDF00D8B431 /* UserDefaults.swift */; };
 		BE9F42EA2AFBAADE00406755 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9F42E92AFBAADE00406755 /* AppDelegate.swift */; };
 		BE9F42EC2AFBAADE00406755 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9F42EB2AFBAADE00406755 /* SceneDelegate.swift */; };
 		BE9F42EE2AFBAADE00406755 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9F42ED2AFBAADE00406755 /* ViewController.swift */; };
@@ -23,6 +24,7 @@
 		BE831F412AFBB91A00F3E566 /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
 		BE831F432AFBB92E00F3E566 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		BE831F452AFBB93E00F3E566 /* Authentication.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Authentication.storyboard; sourceTree = "<group>"; };
+		BE84258B2B150EDF00D8B431 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		BE9F42E62AFBAADE00406755 /* LinkVantage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LinkVantage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE9F42E92AFBAADE00406755 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BE9F42EB2AFBAADE00406755 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +61,7 @@
 		BE831F3E2AFBB8D600F3E566 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				BE84258B2B150EDF00D8B431 /* UserDefaults.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -186,6 +189,7 @@
 			files = (
 				BEEE86102AFCFA240076E557 /* LoginViewController.swift in Sources */,
 				BE9F42EE2AFBAADE00406755 /* ViewController.swift in Sources */,
+				BE84258C2B150EDF00D8B431 /* UserDefaults.swift in Sources */,
 				BE9F42EA2AFBAADE00406755 /* AppDelegate.swift in Sources */,
 				BE9F42EC2AFBAADE00406755 /* SceneDelegate.swift in Sources */,
 				BE831F442AFBB92E00F3E566 /* OnboardingViewController.swift in Sources */,

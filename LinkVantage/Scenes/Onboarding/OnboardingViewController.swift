@@ -51,6 +51,7 @@ class OnboardingViewController: UIViewController {
     }
     
     func pushLogin() {
+        UserDefaults.standard.hasOnboarded = true
         let storyBoard : UIStoryboard = UIStoryboard(name: "Authentication", bundle:nil)
         let loginViewController = storyBoard.instantiateViewController(withIdentifier: "loginPage") as! LoginViewController
         self.navigationController?.pushViewController(loginViewController, animated: true)
@@ -59,6 +60,10 @@ class OnboardingViewController: UIViewController {
     func setupPage() {
         imageView.image = UIImage(named: onboardingPages[currentPage].imageName)
         titleLabel.text = onboardingPages[currentPage].title
+        if currentPage == onboardingPages.count - 1 {
+            nextButton.setTitle("Start", for: .normal)
+            nextButton.titleLabel?.font = UIFont.systemFont(ofSize: 20)
+        }
     }
 
 }

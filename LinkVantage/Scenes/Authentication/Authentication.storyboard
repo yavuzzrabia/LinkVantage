@@ -50,7 +50,6 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="GuF-oX-i7e"/>
                                 </constraints>
-                                <color key="tintColor" systemColor="systemGray2Color"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain">
                                     <attributedString key="attributedTitle">
@@ -86,7 +85,7 @@
                                 </constraints>
                                 <color key="tintColor" systemColor="systemGray2Color"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="apple" title="  Sign in with Apple" cornerStyle="capsule">
+                                <buttonConfiguration key="configuration" style="plain" title="Sign in with Apple" cornerStyle="capsule">
                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="20"/>
                                 </buttonConfiguration>
                             </button>
@@ -97,7 +96,7 @@
                                 </constraints>
                                 <color key="tintColor" systemColor="systemGray2Color"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="google" title="  Sign in with Google" cornerStyle="capsule">
+                                <buttonConfiguration key="configuration" style="plain" title="Sign in with Google" cornerStyle="capsule">
                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="20"/>
                                 </buttonConfiguration>
                             </button>
@@ -164,8 +163,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="apple" width="22" height="22"/>
-        <image name="google" width="14.666666984558105" height="14.666666984558105"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
