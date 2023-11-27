@@ -13,10 +13,11 @@ struct OnboardingPage {
 }
 
 class OnboardingViewController: UIViewController {
-
+    
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var pageController: UIPageControl!
+    @IBOutlet weak var nextButton: UIButton!
     
     let onboardingPages: [OnboardingPage] = [
         OnboardingPage(imageName: "onboarding1", title: "Find and land your next job"),
@@ -26,18 +27,19 @@ class OnboardingViewController: UIViewController {
     var currentPage = 0 {
         didSet {
             pageController.currentPage = currentPage
-            setupOnboardingPages()
+            setupPage()
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         pageController.numberOfPages = onboardingPages.count
-        setupOnboardingPages()
+        imageView.contentMode = .scaleAspectFit
+        setupPage()
     }
     
     @IBAction func nextAction(_ sender: Any) {
-        if currentPage == 2 {
+        if currentPage == onboardingPages.count - 1 {
             self.pushLogin()
         } else {
             currentPage += 1
@@ -54,11 +56,10 @@ class OnboardingViewController: UIViewController {
         self.navigationController?.pushViewController(loginViewController, animated: true)
     }
     
-    func setupOnboardingPages() {
-        imageView.contentMode = .scaleAspectFit
+    func setupPage() {
         imageView.image = UIImage(named: onboardingPages[currentPage].imageName)
         titleLabel.text = onboardingPages[currentPage].title
     }
+
 }
-    
 
