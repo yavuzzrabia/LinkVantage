@@ -43,6 +43,7 @@
 		BE8425C92B174F7100D8B431 /* FirebaseRemoteConfigSwift in Frameworks */ = {isa = PBXBuildFile; productRef = BE8425C82B174F7100D8B431 /* FirebaseRemoteConfigSwift */; };
 		BE8425CB2B174F7100D8B431 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = BE8425CA2B174F7100D8B431 /* FirebaseStorage */; };
 		BE8425CD2B174F7100D8B431 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = BE8425CC2B174F7100D8B431 /* FirebaseStorageCombine-Community */; };
+		BE8425DA2B176E4900D8B431 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8425D92B176E4900D8B431 /* UIViewController.swift */; };
 		BE9F42EA2AFBAADE00406755 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9F42E92AFBAADE00406755 /* AppDelegate.swift */; };
 		BE9F42EC2AFBAADE00406755 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9F42EB2AFBAADE00406755 /* SceneDelegate.swift */; };
 		BE9F42EE2AFBAADE00406755 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9F42ED2AFBAADE00406755 /* ViewController.swift */; };
@@ -62,6 +63,7 @@
 		BE8425912B15238600D8B431 /* PasswordCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordCodeViewController.swift; sourceTree = "<group>"; };
 		BE8425932B1523EF00D8B431 /* NewPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPasswordViewController.swift; sourceTree = "<group>"; };
 		BE8425952B174E8600D8B431 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		BE8425D92B176E4900D8B431 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		BE9F42E62AFBAADE00406755 /* LinkVantage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LinkVantage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE9F42E92AFBAADE00406755 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BE9F42EB2AFBAADE00406755 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				BE84258B2B150EDF00D8B431 /* UserDefaults.swift */,
+				BE8425D92B176E4900D8B431 /* UIViewController.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -298,6 +301,7 @@
 				BE8425922B15238600D8B431 /* PasswordCodeViewController.swift in Sources */,
 				BE9F42EC2AFBAADE00406755 /* SceneDelegate.swift in Sources */,
 				BE8425942B1523EF00D8B431 /* NewPasswordViewController.swift in Sources */,
+				BE8425DA2B176E4900D8B431 /* UIViewController.swift in Sources */,
 				BE831F442AFBB92E00F3E566 /* OnboardingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

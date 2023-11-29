@@ -16,10 +16,18 @@ class ViewController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         if UserDefaults.standard.hasOnboarded {
+            rootVC()
             self.performSegue(withIdentifier: "toAuthentication", sender: nil)
         } else {
             self.performSegue(withIdentifier: "toOnboarding", sender: nil)
         }
+    }
+    
+    func rootVC(){
+        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Authentication", bundle: nil)
+        let viewController = mainStoryboard.instantiateViewController(withIdentifier: "loginPage") as! LoginViewController
+        
+        UIApplication.shared.keyWindow?.rootViewController = viewController
     }
 
 }
