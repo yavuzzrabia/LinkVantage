@@ -25,8 +25,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         setFieldType(textField: passwordTextField, type: .passwordTextField, returnKeyType: .go, tag: 1)
         signinWithAppleButton.layer.borderColor = CGColor.init(red: 0.5, green: 0.5, blue: 0.5, alpha: 0.5)
         signinWithAppleButton.layer.borderWidth = 1
+        signinWithAppleButton.layer.cornerRadius = 20
         signinWithGoogleButton.layer.borderColor = CGColor.init(red: 0.5, green: 0.5, blue: 0.5, alpha: 0.5)
         signinWithGoogleButton.layer.borderWidth = 1
+        signinWithGoogleButton.layer.cornerRadius = 20
         self.hideKeyboardWhenTappedAround()
     }
     
