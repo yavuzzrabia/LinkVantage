@@ -45,6 +45,13 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
+                    <connections>
+                        <segue destination="jPS-di-QKe" kind="relationship" relationship="viewControllers" id="GLn-Sv-JYV"/>
+                        <segue destination="DzV-3f-KOH" kind="relationship" relationship="viewControllers" id="vwL-ya-f7U"/>
+                        <segue destination="NYs-YU-2EB" kind="relationship" relationship="viewControllers" id="eCq-sA-jFd"/>
+                        <segue destination="S12-NW-yTv" kind="relationship" relationship="viewControllers" id="Yjn-Ji-SVi"/>
+                        <segue destination="egU-Zz-ygd" kind="relationship" relationship="viewControllers" id="jeA-vl-6FS"/>
+                    </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f4j-hV-t71" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -58,10 +65,60 @@
             </objects>
             <point key="canvasLocation" x="656" y="220"/>
         </scene>
+        <!--Home-->
+        <scene sceneID="ZSg-KV-XrI">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Home" id="jPS-di-QKe" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="eBm-kh-bxE"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lT0-y8-L9f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="882" y="474"/>
+        </scene>
+        <!--MyNetwork-->
+        <scene sceneID="j3j-8W-uaE">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MyNetwork" id="DzV-3f-KOH" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="aJt-iK-1vp"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lKM-MC-nRS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1121" y="474"/>
+        </scene>
+        <!--Post-->
+        <scene sceneID="g8u-E7-uNP">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Post" id="NYs-YU-2EB" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="kcX-ia-Htc"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kci-Rq-gzR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1339" y="474"/>
+        </scene>
+        <!--Notifications-->
+        <scene sceneID="1a3-0X-J6d">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Notifications" id="S12-NW-yTv" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="NDq-g1-3lo"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Alm-I2-bP8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1569" y="474"/>
+        </scene>
+        <!--Jobs-->
+        <scene sceneID="yfU-1m-geS">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Jobs" id="egU-Zz-ygd" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="ogC-ti-Fbt"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WLA-uu-ns3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1794" y="474"/>
+        </scene>
     </scenes>
     <resources>
         <systemColor name="systemBlueColor">
-            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

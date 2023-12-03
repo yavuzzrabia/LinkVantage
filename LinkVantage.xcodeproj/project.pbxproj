@@ -50,6 +50,16 @@
 		BE9F42F12AFBAADE00406755 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE9F42EF2AFBAADE00406755 /* Main.storyboard */; };
 		BE9F42F32AFBAAE000406755 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE9F42F22AFBAAE000406755 /* Assets.xcassets */; };
 		BE9F42F62AFBAAE000406755 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE9F42F42AFBAAE000406755 /* LaunchScreen.storyboard */; };
+		BEA92C552B1CBD9500A19EE9 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEA92C542B1CBD9400A19EE9 /* Home.storyboard */; };
+		BEA92C572B1CBD9F00A19EE9 /* MyNetwork.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEA92C562B1CBD9F00A19EE9 /* MyNetwork.storyboard */; };
+		BEA92C592B1CBDA900A19EE9 /* Post.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEA92C582B1CBDA900A19EE9 /* Post.storyboard */; };
+		BEA92C5B2B1CBDB400A19EE9 /* Notifications.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEA92C5A2B1CBDB400A19EE9 /* Notifications.storyboard */; };
+		BEA92C5D2B1CBDC100A19EE9 /* Jobs.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEA92C5C2B1CBDC100A19EE9 /* Jobs.storyboard */; };
+		BEA92C5F2B1CC2CA00A19EE9 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA92C5E2B1CC2CA00A19EE9 /* HomeViewController.swift */; };
+		BEA92C612B1CC2D400A19EE9 /* MyNetworkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA92C602B1CC2D400A19EE9 /* MyNetworkViewController.swift */; };
+		BEA92C632B1CC2DD00A19EE9 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA92C622B1CC2DD00A19EE9 /* PostViewController.swift */; };
+		BEA92C652B1CC2E600A19EE9 /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA92C642B1CC2E600A19EE9 /* NotificationsViewController.swift */; };
+		BEA92C672B1CC2ED00A19EE9 /* JobsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA92C662B1CC2ED00A19EE9 /* JobsViewController.swift */; };
 		BEEE86102AFCFA240076E557 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEE860F2AFCFA240076E557 /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -72,6 +82,16 @@
 		BE9F42F22AFBAAE000406755 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BE9F42F52AFBAAE000406755 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BE9F42F72AFBAAE000406755 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BEA92C542B1CBD9400A19EE9 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		BEA92C562B1CBD9F00A19EE9 /* MyNetwork.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyNetwork.storyboard; sourceTree = "<group>"; };
+		BEA92C582B1CBDA900A19EE9 /* Post.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Post.storyboard; sourceTree = "<group>"; };
+		BEA92C5A2B1CBDB400A19EE9 /* Notifications.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Notifications.storyboard; sourceTree = "<group>"; };
+		BEA92C5C2B1CBDC100A19EE9 /* Jobs.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Jobs.storyboard; sourceTree = "<group>"; };
+		BEA92C5E2B1CC2CA00A19EE9 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		BEA92C602B1CC2D400A19EE9 /* MyNetworkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNetworkViewController.swift; sourceTree = "<group>"; };
+		BEA92C622B1CC2DD00A19EE9 /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
+		BEA92C642B1CC2E600A19EE9 /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
+		BEA92C662B1CC2ED00A19EE9 /* JobsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobsViewController.swift; sourceTree = "<group>"; };
 		BEEE860F2AFCFA240076E557 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -120,6 +140,12 @@
 				BE9F42ED2AFBAADE00406755 /* ViewController.swift */,
 				BE831F402AFBB8F800F3E566 /* Onboarding */,
 				BE831F3F2AFBB8EC00F3E566 /* Authentication */,
+				BEA92C4E2B1CBBFD00A19EE9 /* Home */,
+				BEA92C4F2B1CBC0F00A19EE9 /* MyNetwork */,
+				BEA92C502B1CBC1600A19EE9 /* Post */,
+				BEA92C512B1CBC1900A19EE9 /* Notifications */,
+				BEA92C522B1CBC5C00A19EE9 /* Jobs */,
+				BEA92C532B1CBCEE00A19EE9 /* Settings */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -184,6 +210,58 @@
 				BE8425952B174E8600D8B431 /* GoogleService-Info.plist */,
 			);
 			path = LinkVantage;
+			sourceTree = "<group>";
+		};
+		BEA92C4E2B1CBBFD00A19EE9 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				BEA92C542B1CBD9400A19EE9 /* Home.storyboard */,
+				BEA92C5E2B1CC2CA00A19EE9 /* HomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		BEA92C4F2B1CBC0F00A19EE9 /* MyNetwork */ = {
+			isa = PBXGroup;
+			children = (
+				BEA92C562B1CBD9F00A19EE9 /* MyNetwork.storyboard */,
+				BEA92C602B1CC2D400A19EE9 /* MyNetworkViewController.swift */,
+			);
+			path = MyNetwork;
+			sourceTree = "<group>";
+		};
+		BEA92C502B1CBC1600A19EE9 /* Post */ = {
+			isa = PBXGroup;
+			children = (
+				BEA92C582B1CBDA900A19EE9 /* Post.storyboard */,
+				BEA92C622B1CC2DD00A19EE9 /* PostViewController.swift */,
+			);
+			path = Post;
+			sourceTree = "<group>";
+		};
+		BEA92C512B1CBC1900A19EE9 /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				BEA92C5A2B1CBDB400A19EE9 /* Notifications.storyboard */,
+				BEA92C642B1CC2E600A19EE9 /* NotificationsViewController.swift */,
+			);
+			path = Notifications;
+			sourceTree = "<group>";
+		};
+		BEA92C522B1CBC5C00A19EE9 /* Jobs */ = {
+			isa = PBXGroup;
+			children = (
+				BEA92C5C2B1CBDC100A19EE9 /* Jobs.storyboard */,
+				BEA92C662B1CC2ED00A19EE9 /* JobsViewController.swift */,
+			);
+			path = Jobs;
+			sourceTree = "<group>";
+		};
+		BEA92C532B1CBCEE00A19EE9 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -276,8 +354,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BEA92C552B1CBD9500A19EE9 /* Home.storyboard in Resources */,
+				BEA92C5B2B1CBDB400A19EE9 /* Notifications.storyboard in Resources */,
+				BEA92C5D2B1CBDC100A19EE9 /* Jobs.storyboard in Resources */,
 				BE9F42F62AFBAAE000406755 /* LaunchScreen.storyboard in Resources */,
 				BE9F42F32AFBAAE000406755 /* Assets.xcassets in Resources */,
+				BEA92C572B1CBD9F00A19EE9 /* MyNetwork.storyboard in Resources */,
+				BEA92C592B1CBDA900A19EE9 /* Post.storyboard in Resources */,
 				BE9F42F12AFBAADE00406755 /* Main.storyboard in Resources */,
 				BE831F422AFBB91A00F3E566 /* Onboarding.storyboard in Resources */,
 				BE831F462AFBB93E00F3E566 /* Authentication.storyboard in Resources */,
@@ -292,17 +375,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BEA92C672B1CC2ED00A19EE9 /* JobsViewController.swift in Sources */,
+				BEA92C652B1CC2E600A19EE9 /* NotificationsViewController.swift in Sources */,
 				BE8425902B15235C00D8B431 /* ForgotPasswordViewController.swift in Sources */,
 				BEEE86102AFCFA240076E557 /* LoginViewController.swift in Sources */,
+				BEA92C632B1CC2DD00A19EE9 /* PostViewController.swift in Sources */,
 				BE84258E2B1518B300D8B431 /* SignUpViewController.swift in Sources */,
 				BE9F42EE2AFBAADE00406755 /* ViewController.swift in Sources */,
 				BE84258C2B150EDF00D8B431 /* UserDefaults.swift in Sources */,
+				BEA92C612B1CC2D400A19EE9 /* MyNetworkViewController.swift in Sources */,
 				BE9F42EA2AFBAADE00406755 /* AppDelegate.swift in Sources */,
 				BE8425922B15238600D8B431 /* PasswordCodeViewController.swift in Sources */,
 				BE9F42EC2AFBAADE00406755 /* SceneDelegate.swift in Sources */,
 				BE8425942B1523EF00D8B431 /* NewPasswordViewController.swift in Sources */,
 				BE8425DA2B176E4900D8B431 /* UIViewController.swift in Sources */,
 				BE831F442AFBB92E00F3E566 /* OnboardingViewController.swift in Sources */,
+				BEA92C5F2B1CC2CA00A19EE9 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
