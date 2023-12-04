@@ -161,7 +161,7 @@
                         <outlet property="signinWithAppleButton" destination="Py6-rW-kZ1" id="fl3-sx-yby"/>
                         <outlet property="signinWithGoogleButton" destination="mho-rA-vSY" id="0BL-FT-39X"/>
                         <segue destination="DPJ-Zj-Vw4" kind="presentation" identifier="toSignup" modalPresentationStyle="overFullScreen" id="ggg-TH-oee"/>
-                        <segue destination="Yfe-M7-msT" kind="presentation" identifier="toForgotPassword" modalPresentationStyle="overFullScreen" id="7NY-Lf-pQU"/>
+                        <segue destination="Yfe-M7-msT" kind="show" identifier="toForgotPassword" id="7NY-Lf-pQU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -321,21 +321,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Forgot password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hhQ-bt-f0k">
-                                <rect key="frame" x="40" y="25" width="265" height="42"/>
+                                <rect key="frame" x="40" y="128" width="265" height="42"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="35"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder=" Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oEe-oX-S8B">
-                                <rect key="frame" x="29.333333333333343" y="107" width="334.33333333333326" height="40"/>
+                                <rect key="frame" x="29.333333333333343" y="210" width="334.33333333333326" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="Stn-10-BLs"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vEH-Eu-FP6">
-                                <rect key="frame" x="29.333333333333343" y="288" width="334.33333333333326" height="40"/>
+                                <rect key="frame" x="29.333333333333343" y="391" width="334.33333333333326" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="OhM-0E-iNJ"/>
                                 </constraints>
@@ -348,13 +348,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We'll send a verification code to this email or phone number if it matches an existing Linkedln account." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="boa-dp-6cj">
-                                <rect key="frame" x="29.333333333333343" y="187" width="334.33333333333326" height="61"/>
+                                <rect key="frame" x="29.333333333333343" y="290" width="334.33333333333326" height="61"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jyg-c2-sv2">
-                                <rect key="frame" x="306" y="32" width="77" height="35"/>
+                                <rect key="frame" x="306" y="135" width="77" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Cancel"/>
                                 <connections>
@@ -381,15 +381,16 @@
                             <constraint firstItem="jyg-c2-sv2" firstAttribute="bottom" secondItem="hhQ-bt-f0k" secondAttribute="bottom" id="shU-xh-h2v"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="rXE-WQ-EvT"/>
                     <connections>
                         <outlet property="emailTextField" destination="oEe-oX-S8B" id="7Qc-Hf-zBX"/>
                         <outlet property="nextButton" destination="vEH-Eu-FP6" id="1aN-kW-4Y0"/>
-                        <segue destination="qjj-G1-Pb0" kind="presentation" identifier="toCodePage" modalPresentationStyle="overFullScreen" id="fdS-B0-Fde"/>
+                        <segue destination="Hmn-ok-gQh" kind="showDetail" id="Ib1-49-MDk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S8Z-CC-yqy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1801" y="289"/>
+            <point key="canvasLocation" x="1801" y="308"/>
         </scene>
         <!--Password Code View Controller-->
         <scene sceneID="aud-fU-n16">
@@ -400,13 +401,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter the code" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pjF-Xz-KhC">
-                                <rect key="frame" x="40" y="25" width="229" height="42"/>
+                                <rect key="frame" x="40" y="84" width="229" height="42"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="35"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder=" Code" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Lff-qR-bPh">
-                                <rect key="frame" x="29.333333333333343" y="187.66666666666666" width="334.33333333333326" height="40"/>
+                                <rect key="frame" x="29.333333333333343" y="246.66666666666663" width="334.33333333333326" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="CbM-qb-G77"/>
                                 </constraints>
@@ -414,7 +415,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zHa-LD-dRF">
-                                <rect key="frame" x="29.333333333333343" y="287.66666666666669" width="334.33333333333326" height="40"/>
+                                <rect key="frame" x="29.333333333333343" y="346.66666666666669" width="334.33333333333326" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="O8Q-Hg-qFV"/>
                                 </constraints>
@@ -427,13 +428,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Check your mail address for a verification code." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aP4-pj-bQJ">
-                                <rect key="frame" x="29.333333333333343" y="107" width="334.33333333333326" height="40.666666666666657"/>
+                                <rect key="frame" x="29.333333333333343" y="166" width="334.33333333333326" height="40.666666666666657"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jwm-v4-A1a">
-                                <rect key="frame" x="239.66666666666663" y="227.66666666666666" width="124" height="34.999999999999972"/>
+                                <rect key="frame" x="239.66666666666663" y="286.66666666666669" width="124" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Resend code"/>
                                 <connections>
@@ -441,7 +442,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7A0-xr-Egf">
-                                <rect key="frame" x="306" y="32" width="77" height="35"/>
+                                <rect key="frame" x="306" y="91" width="77" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Cancel"/>
                                 <connections>
@@ -470,22 +471,23 @@
                             <constraint firstItem="pjF-Xz-KhC" firstAttribute="leading" secondItem="udo-9p-L6o" secondAttribute="leading" constant="40" id="x37-n3-DV0"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="csn-4A-9GB"/>
                     <connections>
                         <outlet property="codeTextField" destination="Lff-qR-bPh" id="CDL-EW-o1s"/>
                         <outlet property="submitButton" destination="zHa-LD-dRF" id="Eua-Db-E9i"/>
-                        <segue destination="Hmn-ok-gQh" kind="presentation" identifier="toNewPassword" modalPresentationStyle="overFullScreen" id="gbz-tR-Xk4"/>
+                        <segue destination="Hmn-ok-gQh" kind="show" identifier="toNewPassword" id="gbz-tR-Xk4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hbc-AP-Dg2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2616" y="289"/>
+            <point key="canvasLocation" x="2627" y="-227"/>
         </scene>
         <!--New Password View Controller-->
         <scene sceneID="M7X-l0-7BP">
             <objects>
                 <viewController id="Hmn-ok-gQh" customClass="NewPasswordViewController" customModule="LinkVantage" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="95B-Nr-Lqw">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder=" New password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bdj-ko-J48">
@@ -568,6 +570,7 @@
                             <constraint firstItem="0kj-Ws-tru" firstAttribute="top" secondItem="UDa-jK-Tz1" secondAttribute="bottom" constant="40" id="vwG-dn-8vB"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="i0N-Y7-cpD"/>
                     <connections>
                         <outlet property="againNewPasswordTextField" destination="7Zc-VA-GER" id="nxV-jW-xiS"/>
                         <outlet property="newPasswordTextField" destination="bdj-ko-J48" id="5v7-SN-d1M"/>
@@ -597,6 +600,9 @@
             <point key="canvasLocation" x="116.79389312977099" y="-2.1126760563380285"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Ib1-49-MDk"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="apple" width="14.666666984558105" height="14.666666984558105"/>
         <image name="google" width="14.666666984558105" height="14.666666984558105"/>
