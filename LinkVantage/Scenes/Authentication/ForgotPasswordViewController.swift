@@ -48,4 +48,12 @@ class ForgotPasswordViewController: UIViewController, UITextFieldDelegate {
         dismiss(animated: true)
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == emailTextField {
+            textField.resignFirstResponder()
+            nextAction(self)
+        }
+        return true
+    }
+    
 }

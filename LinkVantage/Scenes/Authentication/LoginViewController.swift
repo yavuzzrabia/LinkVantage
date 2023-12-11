@@ -74,19 +74,13 @@ extension LoginViewController {
         UIApplication.shared.keyWindow?.rootViewController = viewController
     }
     
-}
-
-//MARK: - TextField
-
-extension LoginViewController {
-    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == emailTextField {
             textField.resignFirstResponder()
             passwordTextField.becomeFirstResponder()
         } else {
             textField.resignFirstResponder()
-            signinAction(signinButton as UIButton)
+            signinAction(self)
         }
         return true
     }
