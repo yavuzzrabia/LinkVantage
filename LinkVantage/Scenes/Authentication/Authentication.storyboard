@@ -161,7 +161,7 @@
                         <outlet property="signinWithAppleButton" destination="Py6-rW-kZ1" id="fl3-sx-yby"/>
                         <outlet property="signinWithGoogleButton" destination="mho-rA-vSY" id="0BL-FT-39X"/>
                         <segue destination="DPJ-Zj-Vw4" kind="presentation" identifier="toSignup" modalPresentationStyle="overFullScreen" id="ggg-TH-oee"/>
-                        <segue destination="Yfe-M7-msT" kind="show" identifier="toForgotPassword" id="7NY-Lf-pQU"/>
+                        <segue destination="Yfe-M7-msT" kind="presentation" identifier="toForgotPassword" modalPresentationStyle="overFullScreen" id="7NY-Lf-pQU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -280,8 +280,8 @@
                             <constraint firstItem="X8V-Zy-AD4" firstAttribute="top" secondItem="OGx-qb-Gru" secondAttribute="bottom" constant="20" id="Kdp-T1-iL6"/>
                             <constraint firstItem="nTz-gB-B4m" firstAttribute="width" secondItem="LVZ-DV-rFJ" secondAttribute="width" multiplier="0.85" id="LiE-1L-16i"/>
                             <constraint firstItem="zuR-jU-7ia" firstAttribute="centerX" secondItem="7fz-I6-It2" secondAttribute="centerX" id="MtJ-35-cso"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="X8V-Zy-AD4" secondAttribute="bottom" constant="20" id="Nif-Ml-91C"/>
                             <constraint firstItem="sNY-oB-fKw" firstAttribute="width" secondItem="LVZ-DV-rFJ" secondAttribute="width" multiplier="0.85" id="Qf7-G2-eXO"/>
+                            <constraint firstAttribute="bottom" secondItem="X8V-Zy-AD4" secondAttribute="bottom" constant="20" id="R0d-uk-zPg"/>
                             <constraint firstItem="N3e-Il-J7a" firstAttribute="centerX" secondItem="7fz-I6-It2" secondAttribute="centerX" id="Rtl-uR-HFH"/>
                             <constraint firstItem="fZ9-tP-Fhv" firstAttribute="width" secondItem="LVZ-DV-rFJ" secondAttribute="width" multiplier="0.85" id="TMa-3J-RCJ"/>
                             <constraint firstItem="X8V-Zy-AD4" firstAttribute="width" secondItem="LVZ-DV-rFJ" secondAttribute="width" multiplier="0.85" id="Tzu-qy-3uO"/>
@@ -321,13 +321,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Forgot password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hhQ-bt-f0k">
-                                <rect key="frame" x="40" y="128" width="265" height="42"/>
+                                <rect key="frame" x="40" y="25" width="265" height="42"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="35"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder=" Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oEe-oX-S8B">
-                                <rect key="frame" x="29.333333333333343" y="210" width="334.33333333333326" height="40"/>
+                                <rect key="frame" x="29.333333333333343" y="107" width="334.33333333333326" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="Stn-10-BLs"/>
                                 </constraints>
@@ -335,7 +335,7 @@
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vEH-Eu-FP6">
-                                <rect key="frame" x="29.333333333333343" y="391" width="334.33333333333326" height="40"/>
+                                <rect key="frame" x="29.333333333333343" y="288" width="334.33333333333326" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="OhM-0E-iNJ"/>
                                 </constraints>
@@ -348,13 +348,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We'll send a verification code to this email or phone number if it matches an existing Linkedln account." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="boa-dp-6cj">
-                                <rect key="frame" x="29.333333333333343" y="290" width="334.33333333333326" height="61"/>
+                                <rect key="frame" x="29.333333333333343" y="187" width="334.33333333333326" height="61"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jyg-c2-sv2">
-                                <rect key="frame" x="306" y="135" width="77" height="35"/>
+                                <rect key="frame" x="306" y="32" width="77" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Cancel"/>
                                 <connections>
@@ -385,7 +385,6 @@
                     <connections>
                         <outlet property="emailTextField" destination="oEe-oX-S8B" id="7Qc-Hf-zBX"/>
                         <outlet property="nextButton" destination="vEH-Eu-FP6" id="1aN-kW-4Y0"/>
-                        <segue destination="Hmn-ok-gQh" kind="showDetail" id="Ib1-49-MDk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S8Z-CC-yqy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -475,19 +474,19 @@
                     <connections>
                         <outlet property="codeTextField" destination="Lff-qR-bPh" id="CDL-EW-o1s"/>
                         <outlet property="submitButton" destination="zHa-LD-dRF" id="Eua-Db-E9i"/>
-                        <segue destination="Hmn-ok-gQh" kind="show" identifier="toNewPassword" id="gbz-tR-Xk4"/>
+                        <segue destination="Hmn-ok-gQh" kind="presentation" identifier="toNewPassword" modalPresentationStyle="overFullScreen" id="gbz-tR-Xk4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hbc-AP-Dg2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2627" y="-227"/>
+            <point key="canvasLocation" x="3021" y="308"/>
         </scene>
         <!--New Password View Controller-->
         <scene sceneID="M7X-l0-7BP">
             <objects>
                 <viewController id="Hmn-ok-gQh" customClass="NewPasswordViewController" customModule="LinkVantage" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="95B-Nr-Lqw">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder=" New password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bdj-ko-J48">
@@ -579,7 +578,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9IE-GT-Bja" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3434" y="289"/>
+            <point key="canvasLocation" x="3795" y="308"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="qTu-Rs-rGi">
@@ -600,9 +599,6 @@
             <point key="canvasLocation" x="116.79389312977099" y="-2.1126760563380285"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="Ib1-49-MDk"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <image name="apple" width="14.666666984558105" height="14.666666984558105"/>
         <image name="google" width="14.666666984558105" height="14.666666984558105"/>

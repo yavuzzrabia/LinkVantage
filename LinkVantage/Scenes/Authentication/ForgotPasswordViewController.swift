@@ -31,18 +31,17 @@ class ForgotPasswordViewController: UIViewController, UITextFieldDelegate {
         }
         Auth.auth().sendPasswordReset(withEmail: email) { error in
             if let error {
-                debugPrint("Şifre sıfırlama isteği gönderilemedi: \(error.localizedDescription)")
+                debugPrint("Could not send password reset request: \(error.localizedDescription).")
             } else {
-                debugPrint("Şifre sıfırlama kodu gönderildi.")
+                debugPrint("Password reset code has been sent.")
                 let alert = UIAlertController(title: nil, message: "The password reset link has been sent to your e-mail address. You can reset your password by clicking the link in your e-mail address.", preferredStyle: .alert)
                 let okAction = UIAlertAction(title: "OK", style: .default){ _ in
-                    self.navigationController?.popViewController(animated: true)
+                    self.dismiss(animated: true)
                 }
                 alert.addAction(okAction)
                 self.present(alert, animated: true, completion: nil)
             }
         }
-        performSegue(withIdentifier: "toCodePage", sender: nil)
     }
     
     @IBAction func cancelAction(_ sender: Any) {

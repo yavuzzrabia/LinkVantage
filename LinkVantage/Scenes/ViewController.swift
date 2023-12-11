@@ -26,7 +26,6 @@ class ViewController: UIViewController {
     func rootVC(){
         let mainStoryboard: UIStoryboard = UIStoryboard(name: "Authentication", bundle: nil)
         let viewController = mainStoryboard.instantiateViewController(withIdentifier: "loginPage") as! LoginViewController
-        
         UIApplication.shared.keyWindow?.rootViewController = viewController
     }
 
