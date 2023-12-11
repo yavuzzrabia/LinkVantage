@@ -88,7 +88,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     }
     
     func errorAlert(){
-        let alert = UIAlertController(title: "Error", message: "Please fill in the blank fields to register.", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Error", message: "Please fill in the fields above correctly to register.", preferredStyle: .alert)
         let okAction = UIAlertAction(title: "OK", style: .default)
         alert.addAction(okAction)
         self.present(alert, animated: true, completion: nil)
