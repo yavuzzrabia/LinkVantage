@@ -12,7 +12,7 @@ enum TextFieldTypes: String, CaseIterable {
     case surnameTextField
     case emailTextField
     case passwordTextField
-    case passwordAgainTextField
+    case againPasswordTextField
     case usernameTextField
 }
 extension UITextField {
@@ -55,7 +55,7 @@ extension UITextField {
                 textField.keyboardType = .default
                 textField.autocapitalizationType = .none
                 textField.isSecureTextEntry = true
-            case .passwordAgainTextField:
+            case .againPasswordTextField:
                 textField.placeholder = "Password again"
                 textField.keyboardType = .default
                 textField.autocapitalizationType = .none

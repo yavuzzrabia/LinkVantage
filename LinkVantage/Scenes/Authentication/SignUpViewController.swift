@@ -9,7 +9,7 @@ import UIKit
 import Firebase
 import FirebaseAuth
 
-class SignUpViewController: UIViewController {
+class SignUpViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var surnameTextField: UITextField!
@@ -21,6 +21,16 @@ class SignUpViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
+        nameTextField.delegate = self
+        surnameTextField.delegate = self
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
+        againPasswordTextField.delegate = self
+        nameTextField.setFieldType(textField: nameTextField, type: .nameTextField, returnKeyType: .next, tag: 0)
+        surnameTextField.setFieldType(textField: surnameTextField, type: .surnameTextField, returnKeyType: .next, tag: 1)
+        emailTextField.setFieldType(textField: emailTextField, type: .emailTextField, returnKeyType: .next, tag: 2)
+        passwordTextField.setFieldType(textField: passwordTextField, type: .passwordTextField, returnKeyType: .next, tag: 3)
+        againPasswordTextField.setFieldType(textField: againPasswordTextField, type: .againPasswordTextField, returnKeyType: .done, tag: 4)
     }
     
     @IBAction func signupAction(_ sender: Any) {
@@ -67,5 +77,26 @@ class SignUpViewController: UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == nameTextField {
+            textField.resignFirstResponder()
+            surnameTextField.becomeFirstResponder()
+        } else if textField == surnameTextField {
+            textField.resignFirstResponder()
+            emailTextField.becomeFirstResponder()
+        } else if textField == emailTextField {
+            textField.resignFirstResponder()
+            passwordTextField.becomeFirstResponder()
+        } else if textField == passwordTextField {
+            textField.resignFirstResponder()
+            againPasswordTextField.becomeFirstResponder()
+        } else if textField == againPasswordTextField {
+            textField.resignFirstResponder()
+            view.endEditing(true)
+        } else {
+            textField.resignFirstResponder()
+        }
+        return true
+    }
 
 }

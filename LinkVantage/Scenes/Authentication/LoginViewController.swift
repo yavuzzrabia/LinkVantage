@@ -78,9 +78,11 @@ extension LoginViewController {
         if textField == emailTextField {
             textField.resignFirstResponder()
             passwordTextField.becomeFirstResponder()
-        } else {
+        } else if textField == passwordTextField {
             textField.resignFirstResponder()
             signinAction(self)
+        } else {
+            textField.resignFirstResponder()
         }
         return true
     }
