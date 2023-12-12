@@ -33,6 +33,15 @@ class OnboardingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipe(_:)))
+        swipeLeft.direction = .left
+        view.addGestureRecognizer(swipeLeft)
+        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipe(_:)))
+        swipeRight.direction = .right
+        view.addGestureRecognizer(swipeRight)
+        pageController.addTarget(self, action: #selector(pageControllerValueChanged), for: .valueChanged)
+
         pageController.numberOfPages = onboardingPages.count
         imageView.contentMode = .scaleAspectFit
         setupPage()
@@ -63,8 +72,35 @@ class OnboardingViewController: UIViewController {
         if currentPage == onboardingPages.count - 1 {
             nextButton.setTitle("Start", for: .normal)
             nextButton.titleLabel?.font = UIFont.systemFont(ofSize: 20)
+        } else {
+            nextButton.setTitle("Next", for: .normal)
+            nextButton.titleLabel?.font = UIFont.systemFont(ofSize: 20)
+        }
+    }
+    
+    @objc func handleSwipe(_ gesture: UISwipeGestureRecognizer) {
+        switch gesture.direction {
+            case .left: // Sol swipe, bir sonraki resme geç
+            if currentPage != onboardingPages.count - 1 {
+                currentPage += 1
+            }
+            case .right: // Sağ swipe, bir önceki resme geç
+            if currentPage != 0 {
+                currentPage -= 1
+            }
+            default:
+                break
+        }
+    }
+    
+    @objc func pageControllerValueChanged() {
+        let selectedPage = pageController.currentPage
+        if selectedPage != currentPage {
+            currentPage = selectedPage
         }
     }
 
+
 }
+
 

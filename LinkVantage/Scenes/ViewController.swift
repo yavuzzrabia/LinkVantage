@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     }
 
     override func viewDidAppear(_ animated: Bool) {
+        UserDefaults.standard.hasOnboarded = false
         if UserDefaults.standard.hasOnboarded {
             rootVC()
             self.performSegue(withIdentifier: "toAuthentication", sender: nil)
