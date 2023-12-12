@@ -20,6 +20,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.setNavigationBarHidden(true, animated: false)
         emailTextField.delegate = self
         passwordTextField.delegate = self
         emailTextField.setFieldType(textField: emailTextField, type: .emailTextField, returnKeyType: .next, tag: 0)
