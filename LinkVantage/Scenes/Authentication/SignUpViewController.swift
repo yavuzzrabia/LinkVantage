@@ -8,9 +8,13 @@
 import UIKit
 import Firebase
 import FirebaseAuth
+import FirebaseCore
+import FirebaseFirestore
 import GoogleSignIn
 
 class SignUpViewController: UIViewController, UITextFieldDelegate {
+    
+    let db = Firestore.firestore()
     
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var surnameTextField: UITextField!
@@ -35,39 +39,39 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func signupAction(_ sender: Any) {
-        guard let name = nameTextField.text, !name.isEmpty else { errorAlert(); return }
-        guard let surname = surnameTextField.text, !surname.isEmpty else { errorAlert(); return }
-        guard let email = emailTextField.text, !email.isEmpty, email.isEmailAddress else { errorAlert(); return }
-        guard let password = passwordTextField.text, !password.isEmpty else { errorAlert(); return }
-        guard let againPassword = againPasswordTextField.text, !againPassword.isEmpty else { errorAlert(); return }
+        
+        guard let name = nameTextField.text, !name.isEmpty else { errorAlert(message: "Please fill in the fields above correctly to register.", dismiss: false); return }
+        guard let surname = surnameTextField.text, !surname.isEmpty else { errorAlert(message: "Please fill in the fields above correctly to register.", dismiss: false); return }
+        guard let email = emailTextField.text, !email.isEmpty, email.isEmailAddress else { errorAlert(message: "Please fill in the fields above correctly to register.", dismiss: false); return }
+        guard let password = passwordTextField.text, !password.isEmpty else { errorAlert(message: "Please fill in the fields above correctly to register.", dismiss: false); return }
+        guard let againPassword = againPasswordTextField.text, !againPassword.isEmpty else { errorAlert(message: "Please fill in the fields above correctly to register.", dismiss: false); return }
+        
         if password == againPassword {
             if password.isStrongPassword {
                 Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
                     if error != nil {
-                        let alert = UIAlertController(title: "Error", message: "Registration could not be completed.", preferredStyle: .alert)
-                        let okAction = UIAlertAction(title: "OK", style: .default)
-                        alert.addAction(okAction)
-                        self.present(alert, animated: true, completion: nil)
+                        self.errorAlert(message: "Registration could not be completed.", dismiss: false)
                     } else {
-                        let alert = UIAlertController(title: nil, message: "Registration has been completed successfully.", preferredStyle: .alert)
-                        let okAction = UIAlertAction(title: "OK", style: .default) { _ in
-                            self.dismiss(animated: true)
+                        Task {
+                            do {
+                                let ref = try await self.db.collection("users").addDocument(data: [
+                                    "name": name,
+                                    "surname": surname,
+                                    "email": email
+                                ])
+                                print("Document added with ID: \(ref.documentID)")
+                                self.errorAlert(message: "Registration has been completed successfully.", dismiss: true)
+                            } catch {
+                                self.errorAlert(message: "Registration could not be completed.", dismiss: false)
+                            }
                         }
-                        alert.addAction(okAction)
-                        self.present(alert, animated: true, completion: nil)
                     }
                 }
             } else {
-                let alert = UIAlertController(title: "Error", message: "Please check your password. Your password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, one digit, and one special character ($@$!%*?&).", preferredStyle: .alert)
-                let okAction = UIAlertAction(title: "OK", style: .default)
-                alert.addAction(okAction)
-                self.present(alert, animated: true, completion: nil)
+                errorAlert(message: "Please check your password. Your password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, one digit, and one special character ($@$!%*?&).", dismiss: false)
             }
         } else {
-            let alert = UIAlertController(title: "Error", message: "The entered passwords do not match.", preferredStyle: .alert)
-            let okAction = UIAlertAction(title: "OK", style: .default)
-            alert.addAction(okAction)
-            self.present(alert, animated: true, completion: nil)
+            self.errorAlert(message: "The entered passwords do not match.", dismiss: false)
         }
     }
     
@@ -94,9 +98,13 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    func errorAlert(){
-        let alert = UIAlertController(title: "Error", message: "Please fill in the fields above correctly to register.", preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "OK", style: .default)
+    func errorAlert(message: String, dismiss: Bool){
+        let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default){_ in
+            if dismiss {
+                self.dismiss(animated: true)
+            }
+        }
         alert.addAction(okAction)
         self.present(alert, animated: true, completion: nil)
     }
