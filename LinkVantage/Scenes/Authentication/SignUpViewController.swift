@@ -41,20 +41,27 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         guard let password = passwordTextField.text, !password.isEmpty else { errorAlert(); return }
         guard let againPassword = againPasswordTextField.text, !againPassword.isEmpty else { errorAlert(); return }
         if password == againPassword {
-            Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
-                if error != nil {
-                    let alert = UIAlertController(title: "Error", message: "Registration could not be completed.", preferredStyle: .alert)
-                    let okAction = UIAlertAction(title: "OK", style: .default)
-                    alert.addAction(okAction)
-                    self.present(alert, animated: true, completion: nil)
-                } else {
-                    let alert = UIAlertController(title: nil, message: "Registration has been completed successfully.", preferredStyle: .alert)
-                    let okAction = UIAlertAction(title: "OK", style: .default) { _ in
-                        self.dismiss(animated: true)
+            if password.isStrongPassword {
+                Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
+                    if error != nil {
+                        let alert = UIAlertController(title: "Error", message: "Registration could not be completed.", preferredStyle: .alert)
+                        let okAction = UIAlertAction(title: "OK", style: .default)
+                        alert.addAction(okAction)
+                        self.present(alert, animated: true, completion: nil)
+                    } else {
+                        let alert = UIAlertController(title: nil, message: "Registration has been completed successfully.", preferredStyle: .alert)
+                        let okAction = UIAlertAction(title: "OK", style: .default) { _ in
+                            self.dismiss(animated: true)
+                        }
+                        alert.addAction(okAction)
+                        self.present(alert, animated: true, completion: nil)
                     }
-                    alert.addAction(okAction)
-                    self.present(alert, animated: true, completion: nil)
                 }
+            } else {
+                let alert = UIAlertController(title: "Error", message: "Please check your password. Your password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, one digit, and one special character ($@$!%*?&).", preferredStyle: .alert)
+                let okAction = UIAlertAction(title: "OK", style: .default)
+                alert.addAction(okAction)
+                self.present(alert, animated: true, completion: nil)
             }
         } else {
             let alert = UIAlertController(title: "Error", message: "The entered passwords do not match.", preferredStyle: .alert)
