@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class ViewController: UIViewController {
 
@@ -16,8 +17,12 @@ class ViewController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         if UserDefaults.standard.hasOnboarded {
-            rootVC()
-            self.performSegue(withIdentifier: "toAuthentication", sender: nil)
+            if Auth.auth().currentUser != nil {
+                self.performSegue(withIdentifier: "toTabBar", sender: nil)
+            } else {
+                rootVC()
+                self.performSegue(withIdentifier: "toAuthentication", sender: nil)
+            }
         } else {
             self.performSegue(withIdentifier: "toOnboarding", sender: nil)
         }

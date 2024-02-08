@@ -54,7 +54,14 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 alert.addAction(okAction)
                 strongSelf.present(alert, animated: true)
             } else {
-                strongSelf.rootVC()
+                Auth.auth().currentUser?.reload(completion: { (error) in
+                    if let error = error {
+                        print("Session persistence could not be set: \(error.localizedDescription)")
+                    } else {
+                        print("Session persistence set successfully.")
+                        strongSelf.rootVC()
+                    }
+                })
             }
         }
     }
@@ -75,8 +82,14 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
           guard let user = result?.user, let idToken = user.idToken?.tokenString else { return }
           let credential = GoogleAuthProvider.credential(withIDToken: idToken, accessToken: user.accessToken.tokenString)
             Auth.auth().signIn(with: credential) { result, error in
-              // At this point, our user is signed in
-                self.rootVC()
+                Auth.auth().currentUser?.reload(completion: { (error) in
+                    if let error = error {
+                        print("Session persistence could not be set: \(error.localizedDescription)")
+                    } else {
+                        print("Session persistence set successfully.")
+                        self.rootVC()
+                    }
+                })
             }
         }
         
@@ -88,7 +101,7 @@ extension LoginViewController {
     
     func rootVC() {
         let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let viewController = mainStoryboard.instantiateViewController(withIdentifier: "tabBarController") as! UITabBarController
+        let viewController = mainStoryboard.instantiateViewController(withIdentifier: "tabBarController") as! TabBarController
         UIApplication.shared.keyWindow?.rootViewController = viewController
     }
     
