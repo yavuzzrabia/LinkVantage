@@ -10,7 +10,6 @@
 		BE1954192B27C79100C4C571 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = BE1954182B27C79100C4C571 /* GoogleSignIn */; };
 		BE19541B2B27C79100C4C571 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = BE19541A2B27C79100C4C571 /* GoogleSignInSwift */; };
 		BE39BB4B2B1CC75F0028382A /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE39BB4A2B1CC75F0028382A /* TabBarController.swift */; };
-		BE39BB4D2B1CD4070028382A /* HomeSettingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE39BB4C2B1CD4070028382A /* HomeSettingPageViewController.swift */; };
 		BE39BB512B1E1E640028382A /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE39BB502B1E1E640028382A /* UITextField.swift */; };
 		BE39BB532B1E21920028382A /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE39BB522B1E21920028382A /* String.swift */; };
 		BE831F422AFBB91A00F3E566 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE831F412AFBB91A00F3E566 /* Onboarding.storyboard */; };
@@ -66,12 +65,14 @@
 		BEA92C632B1CC2DD00A19EE9 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA92C622B1CC2DD00A19EE9 /* PostViewController.swift */; };
 		BEA92C652B1CC2E600A19EE9 /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA92C642B1CC2E600A19EE9 /* NotificationsViewController.swift */; };
 		BEA92C672B1CC2ED00A19EE9 /* JobsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA92C662B1CC2ED00A19EE9 /* JobsViewController.swift */; };
+		BED7ACA82B75876F001A58A4 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED7ACA72B75876F001A58A4 /* ProfileViewController.swift */; };
+		BED7ACAC2B763ED2001A58A4 /* ActivityUITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED7ACAA2B763ED2001A58A4 /* ActivityUITableViewCell.swift */; };
+		BED7ACAD2B763ED2001A58A4 /* ActivityUITableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BED7ACAB2B763ED2001A58A4 /* ActivityUITableViewCell.xib */; };
 		BEEE86102AFCFA240076E557 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEE860F2AFCFA240076E557 /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		BE39BB4A2B1CC75F0028382A /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
-		BE39BB4C2B1CD4070028382A /* HomeSettingPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSettingPageViewController.swift; sourceTree = "<group>"; };
 		BE39BB502B1E1E640028382A /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 		BE39BB522B1E21920028382A /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		BE831F412AFBB91A00F3E566 /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
@@ -102,6 +103,9 @@
 		BEA92C622B1CC2DD00A19EE9 /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		BEA92C642B1CC2E600A19EE9 /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
 		BEA92C662B1CC2ED00A19EE9 /* JobsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobsViewController.swift; sourceTree = "<group>"; };
+		BED7ACA72B75876F001A58A4 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		BED7ACAA2B763ED2001A58A4 /* ActivityUITableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityUITableViewCell.swift; sourceTree = "<group>"; };
+		BED7ACAB2B763ED2001A58A4 /* ActivityUITableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActivityUITableViewCell.xib; sourceTree = "<group>"; };
 		BEEE860F2AFCFA240076E557 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -158,7 +162,6 @@
 				BEA92C502B1CBC1600A19EE9 /* Post */,
 				BEA92C512B1CBC1900A19EE9 /* Notifications */,
 				BEA92C522B1CBC5C00A19EE9 /* Jobs */,
-				BEA92C532B1CBCEE00A19EE9 /* Settings */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -231,8 +234,9 @@
 			isa = PBXGroup;
 			children = (
 				BEA92C542B1CBD9400A19EE9 /* Home.storyboard */,
-				BE39BB4C2B1CD4070028382A /* HomeSettingPageViewController.swift */,
 				BEA92C5E2B1CC2CA00A19EE9 /* HomeViewController.swift */,
+				BED7ACA72B75876F001A58A4 /* ProfileViewController.swift */,
+				BED7ACA92B763E94001A58A4 /* TableViewCells */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -273,11 +277,13 @@
 			path = Jobs;
 			sourceTree = "<group>";
 		};
-		BEA92C532B1CBCEE00A19EE9 /* Settings */ = {
+		BED7ACA92B763E94001A58A4 /* TableViewCells */ = {
 			isa = PBXGroup;
 			children = (
+				BED7ACAA2B763ED2001A58A4 /* ActivityUITableViewCell.swift */,
+				BED7ACAB2B763ED2001A58A4 /* ActivityUITableViewCell.xib */,
 			);
-			path = Settings;
+			path = TableViewCells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -383,6 +389,7 @@
 				BE9F42F12AFBAADE00406755 /* Main.storyboard in Resources */,
 				BE831F422AFBB91A00F3E566 /* Onboarding.storyboard in Resources */,
 				BE831F462AFBB93E00F3E566 /* Authentication.storyboard in Resources */,
+				BED7ACAD2B763ED2001A58A4 /* ActivityUITableViewCell.xib in Resources */,
 				BE8425962B174E8600D8B431 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -396,11 +403,11 @@
 			files = (
 				BEA92C672B1CC2ED00A19EE9 /* JobsViewController.swift in Sources */,
 				BEA92C652B1CC2E600A19EE9 /* NotificationsViewController.swift in Sources */,
+				BED7ACA82B75876F001A58A4 /* ProfileViewController.swift in Sources */,
 				BE39BB532B1E21920028382A /* String.swift in Sources */,
 				BE8425902B15235C00D8B431 /* ForgotPasswordViewController.swift in Sources */,
 				BEEE86102AFCFA240076E557 /* LoginViewController.swift in Sources */,
 				BEA92C632B1CC2DD00A19EE9 /* PostViewController.swift in Sources */,
-				BE39BB4D2B1CD4070028382A /* HomeSettingPageViewController.swift in Sources */,
 				BE84258E2B1518B300D8B431 /* SignUpViewController.swift in Sources */,
 				BE39BB4B2B1CC75F0028382A /* TabBarController.swift in Sources */,
 				BE9F42EE2AFBAADE00406755 /* ViewController.swift in Sources */,
@@ -412,6 +419,7 @@
 				BE9F42EC2AFBAADE00406755 /* SceneDelegate.swift in Sources */,
 				BE8425942B1523EF00D8B431 /* NewPasswordViewController.swift in Sources */,
 				BE8425DA2B176E4900D8B431 /* UIViewController.swift in Sources */,
+				BED7ACAC2B763ED2001A58A4 /* ActivityUITableViewCell.swift in Sources */,
 				BE831F442AFBB92E00F3E566 /* OnboardingViewController.swift in Sources */,
 				BEA92C5F2B1CC2CA00A19EE9 /* HomeViewController.swift in Sources */,
 			);
