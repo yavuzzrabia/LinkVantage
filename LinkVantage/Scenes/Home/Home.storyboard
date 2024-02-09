@@ -648,6 +648,7 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="VFr-4L-ndr" secondAttribute="trailing" id="4Np-Wq-c0p"/>
+                                    <constraint firstItem="VFr-4L-ndr" firstAttribute="width" secondItem="XCZ-3m-nLI" secondAttribute="width" id="Vje-OT-gdu"/>
                                     <constraint firstAttribute="bottom" secondItem="VFr-4L-ndr" secondAttribute="bottom" id="pYM-R4-8Lc"/>
                                     <constraint firstItem="VFr-4L-ndr" firstAttribute="leading" secondItem="XCZ-3m-nLI" secondAttribute="leading" id="swv-wx-Jn2"/>
                                     <constraint firstItem="VFr-4L-ndr" firstAttribute="top" secondItem="XCZ-3m-nLI" secondAttribute="top" id="wgl-Ea-4XY"/>
