@@ -12,6 +12,7 @@
 		BE39BB4B2B1CC75F0028382A /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE39BB4A2B1CC75F0028382A /* TabBarController.swift */; };
 		BE39BB512B1E1E640028382A /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE39BB502B1E1E640028382A /* UITextField.swift */; };
 		BE39BB532B1E21920028382A /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE39BB522B1E21920028382A /* String.swift */; };
+		BE4E0EC82B900A7A00C6C714 /* UserResponsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4E0EC72B900A7A00C6C714 /* UserResponsModel.swift */; };
 		BE831F422AFBB91A00F3E566 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE831F412AFBB91A00F3E566 /* Onboarding.storyboard */; };
 		BE831F442AFBB92E00F3E566 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE831F432AFBB92E00F3E566 /* OnboardingViewController.swift */; };
 		BE831F462AFBB93E00F3E566 /* Authentication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE831F452AFBB93E00F3E566 /* Authentication.storyboard */; };
@@ -73,6 +74,7 @@
 		BE39BB4A2B1CC75F0028382A /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		BE39BB502B1E1E640028382A /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 		BE39BB522B1E21920028382A /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		BE4E0EC72B900A7A00C6C714 /* UserResponsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResponsModel.swift; sourceTree = "<group>"; };
 		BE831F412AFBB91A00F3E566 /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
 		BE831F432AFBB92E00F3E566 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		BE831F452AFBB93E00F3E566 /* Authentication.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Authentication.storyboard; sourceTree = "<group>"; };
@@ -145,6 +147,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BE4E0EC22B900A3D00C6C714 /* Connection */ = {
+			isa = PBXGroup;
+			children = (
+				BE4E0EC32B900A4400C6C714 /* Models */,
+			);
+			path = Connection;
+			sourceTree = "<group>";
+		};
+		BE4E0EC32B900A4400C6C714 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BE4E0EC52B900A4F00C6C714 /* ResponseModels */,
+				BE4E0EC42B900A4900C6C714 /* RequestModels */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		BE4E0EC42B900A4900C6C714 /* RequestModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = RequestModels;
+			sourceTree = "<group>";
+		};
+		BE4E0EC52B900A4F00C6C714 /* ResponseModels */ = {
+			isa = PBXGroup;
+			children = (
+				BE4E0EC72B900A7A00C6C714 /* UserResponsModel.swift */,
+			);
+			path = ResponseModels;
+			sourceTree = "<group>";
+		};
 		BE831F3D2AFBB8C000F3E566 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
@@ -158,6 +192,7 @@
 				BEA92C502B1CBC1600A19EE9 /* Post */,
 				BEA92C512B1CBC1900A19EE9 /* Notifications */,
 				BEA92C522B1CBC5C00A19EE9 /* Jobs */,
+				BE4E0EC22B900A3D00C6C714 /* Connection */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -387,6 +422,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BEA92C672B1CC2ED00A19EE9 /* JobsViewController.swift in Sources */,
+				BE4E0EC82B900A7A00C6C714 /* UserResponsModel.swift in Sources */,
 				BEA92C652B1CC2E600A19EE9 /* NotificationsViewController.swift in Sources */,
 				BED7ACA82B75876F001A58A4 /* ProfileViewController.swift in Sources */,
 				BE39BB532B1E21920028382A /* String.swift in Sources */,

@@ -6,11 +6,16 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseStorage
 
 class ProfileViewController: UIViewController {
     
-    var userID: String?
-
+    var userID: String? = "xnALn5QFPlJB9rTlVAJD"
+    var user: UserResponsModel?
+    let db = Firestore.firestore()
+    let storage = Storage.storage()
+    
     @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var nameSurnameLabel: UILabel!
@@ -42,7 +47,7 @@ class ProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        getUserInfo()
     }
     
     @IBAction func settingBackgroundImage(_ sender: Any) {
@@ -86,6 +91,42 @@ class ProfileViewController: UIViewController {
     @IBAction func addSkill(_ sender: Any) {
     }
     @IBAction func showAllSkills(_ sender: Any) {
+    }
+    
+    func getUserInfo(){
+        guard let userID = userID else { return }
+        db.collection("users").document(userID).getDocument { documentSnapshot, error in
+            if let document = documentSnapshot, document.exists {
+                do {
+                    self.user = try document.data(as: UserResponsModel.self)
+                    guard let name = self.user?.name, let surname = self.user?.surname else { return }
+                    self.nameSurnameLabel.text = name + " " + surname
+                    guard let occupation = self.user?.occupation else { return }
+                    self.occupationLabel.text = occupation
+                    guard let about = self.user?.about else { return }
+                    self.aboutLabel.text = about
+                    guard let profileImageID = self.user?.profileImageRef.documentID, let backgroundImageID = self.user?.backgroundImageRef.documentID else { return }
+                    let profileImageRef = self.storage.reference(withPath: "profile/\(profileImageID)")
+                    let backgroundImageRef = self.storage.reference(withPath: "background/\(backgroundImageID)")
+                    profileImageRef.getData(maxSize: 1 * 1024 * 1024) { data, error in
+                      if let error = error {
+                          print("Error getting profile image data: \(error)")
+                      } else {
+                          self.profileImage.image = UIImage(data: data!)
+                      }
+                    }
+                    backgroundImageRef.getData(maxSize: 1 * 1024 * 1024) { data, error in
+                      if let error = error {
+                          print("Error getting background image data: \(error)")
+                      } else {
+                          self.backgroundImage.image = UIImage(data: data!)
+                      }
+                    }
+                } catch {
+                    print("Error getting document: \(error)")
+                }
+            }
+        }
     }
     
 }
