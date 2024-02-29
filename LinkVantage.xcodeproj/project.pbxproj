@@ -66,8 +66,6 @@
 		BEA92C652B1CC2E600A19EE9 /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA92C642B1CC2E600A19EE9 /* NotificationsViewController.swift */; };
 		BEA92C672B1CC2ED00A19EE9 /* JobsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA92C662B1CC2ED00A19EE9 /* JobsViewController.swift */; };
 		BED7ACA82B75876F001A58A4 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED7ACA72B75876F001A58A4 /* ProfileViewController.swift */; };
-		BED7ACAC2B763ED2001A58A4 /* ActivityUITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED7ACAA2B763ED2001A58A4 /* ActivityUITableViewCell.swift */; };
-		BED7ACAD2B763ED2001A58A4 /* ActivityUITableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BED7ACAB2B763ED2001A58A4 /* ActivityUITableViewCell.xib */; };
 		BEEE86102AFCFA240076E557 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEE860F2AFCFA240076E557 /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -104,8 +102,6 @@
 		BEA92C642B1CC2E600A19EE9 /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
 		BEA92C662B1CC2ED00A19EE9 /* JobsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobsViewController.swift; sourceTree = "<group>"; };
 		BED7ACA72B75876F001A58A4 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		BED7ACAA2B763ED2001A58A4 /* ActivityUITableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityUITableViewCell.swift; sourceTree = "<group>"; };
-		BED7ACAB2B763ED2001A58A4 /* ActivityUITableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActivityUITableViewCell.xib; sourceTree = "<group>"; };
 		BEEE860F2AFCFA240076E557 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -236,7 +232,6 @@
 				BEA92C542B1CBD9400A19EE9 /* Home.storyboard */,
 				BEA92C5E2B1CC2CA00A19EE9 /* HomeViewController.swift */,
 				BED7ACA72B75876F001A58A4 /* ProfileViewController.swift */,
-				BED7ACA92B763E94001A58A4 /* TableViewCells */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -275,15 +270,6 @@
 				BEA92C662B1CC2ED00A19EE9 /* JobsViewController.swift */,
 			);
 			path = Jobs;
-			sourceTree = "<group>";
-		};
-		BED7ACA92B763E94001A58A4 /* TableViewCells */ = {
-			isa = PBXGroup;
-			children = (
-				BED7ACAA2B763ED2001A58A4 /* ActivityUITableViewCell.swift */,
-				BED7ACAB2B763ED2001A58A4 /* ActivityUITableViewCell.xib */,
-			);
-			path = TableViewCells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -389,7 +375,6 @@
 				BE9F42F12AFBAADE00406755 /* Main.storyboard in Resources */,
 				BE831F422AFBB91A00F3E566 /* Onboarding.storyboard in Resources */,
 				BE831F462AFBB93E00F3E566 /* Authentication.storyboard in Resources */,
-				BED7ACAD2B763ED2001A58A4 /* ActivityUITableViewCell.xib in Resources */,
 				BE8425962B174E8600D8B431 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -419,7 +404,6 @@
 				BE9F42EC2AFBAADE00406755 /* SceneDelegate.swift in Sources */,
 				BE8425942B1523EF00D8B431 /* NewPasswordViewController.swift in Sources */,
 				BE8425DA2B176E4900D8B431 /* UIViewController.swift in Sources */,
-				BED7ACAC2B763ED2001A58A4 /* ActivityUITableViewCell.swift in Sources */,
 				BE831F442AFBB92E00F3E566 /* OnboardingViewController.swift in Sources */,
 				BEA92C5F2B1CC2CA00A19EE9 /* HomeViewController.swift in Sources */,
 			);
