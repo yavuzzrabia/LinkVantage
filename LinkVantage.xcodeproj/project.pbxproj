@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE02ADA52BB23A4A009B0EAF /* UserPostsResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE02ADA42BB23A4A009B0EAF /* UserPostsResponseModel.swift */; };
+		BE0C439B2B98AC6E00050211 /* ActivityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0C43992B98AC6E00050211 /* ActivityTableViewCell.swift */; };
+		BE0C439C2B98AC6E00050211 /* ActivityTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE0C439A2B98AC6E00050211 /* ActivityTableViewCell.xib */; };
 		BE1954192B27C79100C4C571 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = BE1954182B27C79100C4C571 /* GoogleSignIn */; };
 		BE19541B2B27C79100C4C571 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = BE19541A2B27C79100C4C571 /* GoogleSignInSwift */; };
 		BE39BB4B2B1CC75F0028382A /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE39BB4A2B1CC75F0028382A /* TabBarController.swift */; };
@@ -71,6 +74,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BE02ADA42BB23A4A009B0EAF /* UserPostsResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPostsResponseModel.swift; sourceTree = "<group>"; };
+		BE0C43992B98AC6E00050211 /* ActivityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTableViewCell.swift; sourceTree = "<group>"; };
+		BE0C439A2B98AC6E00050211 /* ActivityTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActivityTableViewCell.xib; sourceTree = "<group>"; };
 		BE39BB4A2B1CC75F0028382A /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		BE39BB502B1E1E640028382A /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 		BE39BB522B1E21920028382A /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
@@ -147,6 +153,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BE0C43962B98ABA600050211 /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				BE0C43992B98AC6E00050211 /* ActivityTableViewCell.swift */,
+				BE0C439A2B98AC6E00050211 /* ActivityTableViewCell.xib */,
+			);
+			path = TableViewCells;
+			sourceTree = "<group>";
+		};
 		BE4E0EC22B900A3D00C6C714 /* Connection */ = {
 			isa = PBXGroup;
 			children = (
@@ -175,6 +190,7 @@
 			isa = PBXGroup;
 			children = (
 				BE4E0EC72B900A7A00C6C714 /* UserResponsModel.swift */,
+				BE02ADA42BB23A4A009B0EAF /* UserPostsResponseModel.swift */,
 			);
 			path = ResponseModels;
 			sourceTree = "<group>";
@@ -267,6 +283,7 @@
 				BEA92C542B1CBD9400A19EE9 /* Home.storyboard */,
 				BEA92C5E2B1CC2CA00A19EE9 /* HomeViewController.swift */,
 				BED7ACA72B75876F001A58A4 /* ProfileViewController.swift */,
+				BE0C43962B98ABA600050211 /* TableViewCells */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -410,6 +427,7 @@
 				BE9F42F12AFBAADE00406755 /* Main.storyboard in Resources */,
 				BE831F422AFBB91A00F3E566 /* Onboarding.storyboard in Resources */,
 				BE831F462AFBB93E00F3E566 /* Authentication.storyboard in Resources */,
+				BE0C439C2B98AC6E00050211 /* ActivityTableViewCell.xib in Resources */,
 				BE8425962B174E8600D8B431 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -425,6 +443,8 @@
 				BE4E0EC82B900A7A00C6C714 /* UserResponsModel.swift in Sources */,
 				BEA92C652B1CC2E600A19EE9 /* NotificationsViewController.swift in Sources */,
 				BED7ACA82B75876F001A58A4 /* ProfileViewController.swift in Sources */,
+				BE02ADA52BB23A4A009B0EAF /* UserPostsResponseModel.swift in Sources */,
+				BE0C439B2B98AC6E00050211 /* ActivityTableViewCell.swift in Sources */,
 				BE39BB532B1E21920028382A /* String.swift in Sources */,
 				BE8425902B15235C00D8B431 /* ForgotPasswordViewController.swift in Sources */,
 				BEEE86102AFCFA240076E557 /* LoginViewController.swift in Sources */,

@@ -13,6 +13,7 @@ class ProfileViewController: UIViewController {
     
     var userID: String? = "xnALn5QFPlJB9rTlVAJD"
     var user: UserResponsModel?
+    var posts: [UserPostsResponseModel] = []
     let db = Firestore.firestore()
     let storage = Storage.storage()
     
@@ -47,7 +48,13 @@ class ProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        activityTableView.delegate = self
+        activityTableView.dataSource = self
         getUserInfo()
+        getUserPosts{ [weak self] posts in
+            self?.posts = posts
+            self?.activityTableView.reloadData()
+        }
     }
     
     @IBAction func settingBackgroundImage(_ sender: Any) {
@@ -128,5 +135,67 @@ class ProfileViewController: UIViewController {
             }
         }
     }
+    
+    func getUserPosts(completion: @escaping ([UserPostsResponseModel]) -> Void) {
+        guard let userID = userID else { return }
+        let userRef = db.collection("users").document(userID)
+        db.collection("posts").whereField("userID", isEqualTo: userRef).getDocuments { querySnapshot, error in
+            if let querySnapshot = querySnapshot {
+                if querySnapshot.documents.count != 0 {
+                    for document in querySnapshot.documents {
+                        do {
+                            let post = try document.data(as: UserPostsResponseModel.self)
+                            self.posts.append(post)
+                        } catch {
+                            print("Error getting document: \(error)")
+                        }
+                    }
+                    self.activityTableView.reloadData()
+                } else {
+                    print("There is not querySnapshot.documents ")
+                }
+            }
+            completion(self.posts)
+        }
+    }
+    
+}
+
+extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if tableView == activityTableView {
+            if posts.isEmpty {
+                return 0
+            } else if posts.count == 1 {
+                posts.sort { $0.datePublished > $1.datePublished }
+                return 1
+            } else {
+                posts.sort { $0.datePublished > $1.datePublished }
+                return 2
+            }
+        }
+        return 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if tableView == activityTableView {
+            let cell = Bundle.main.loadNibNamed("ActivityTableViewCell", owner: self, options: nil)?.first as! ActivityTableViewCell
+            if !posts.isEmpty {
+                cell.contentLabel.text = posts[0].content
+            }
+            cell.postImageView.image = UIImage(named: "apple")
+            return cell
+        }
+        return UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if tableView == activityTableView {
+            return 100
+        }
+        return 0
+    }
+    
     
 }
