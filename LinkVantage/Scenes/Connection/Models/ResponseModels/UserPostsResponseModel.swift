@@ -9,7 +9,8 @@ import Foundation
 import Firebase
 
 struct UserPostsResponseModel: Codable {
+    var userID: DocumentReference
     var content: String
     var datePublished: Date
-    var userID: DocumentReference
+//    var image: DocumentReference
 }

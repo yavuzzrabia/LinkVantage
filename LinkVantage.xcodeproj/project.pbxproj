@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		BE02ADA52BB23A4A009B0EAF /* UserPostsResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE02ADA42BB23A4A009B0EAF /* UserPostsResponseModel.swift */; };
+		BE02ADF92BB4E88D009B0EAF /* ExperienceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE02ADF82BB4E88D009B0EAF /* ExperienceTableViewCell.xib */; };
+		BE02ADFA2BB4E88D009B0EAF /* ExperienceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE02ADF72BB4E88D009B0EAF /* ExperienceTableViewCell.swift */; };
+		BE02ADFE2BB4EAE9009B0EAF /* UserExperiencesResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE02ADFD2BB4EAE9009B0EAF /* UserExperiencesResponseModel.swift */; };
 		BE0C439B2B98AC6E00050211 /* ActivityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0C43992B98AC6E00050211 /* ActivityTableViewCell.swift */; };
 		BE0C439C2B98AC6E00050211 /* ActivityTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE0C439A2B98AC6E00050211 /* ActivityTableViewCell.xib */; };
 		BE1954192B27C79100C4C571 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = BE1954182B27C79100C4C571 /* GoogleSignIn */; };
@@ -75,6 +78,9 @@
 
 /* Begin PBXFileReference section */
 		BE02ADA42BB23A4A009B0EAF /* UserPostsResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPostsResponseModel.swift; sourceTree = "<group>"; };
+		BE02ADF72BB4E88D009B0EAF /* ExperienceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceTableViewCell.swift; sourceTree = "<group>"; };
+		BE02ADF82BB4E88D009B0EAF /* ExperienceTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExperienceTableViewCell.xib; sourceTree = "<group>"; };
+		BE02ADFD2BB4EAE9009B0EAF /* UserExperiencesResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserExperiencesResponseModel.swift; sourceTree = "<group>"; };
 		BE0C43992B98AC6E00050211 /* ActivityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTableViewCell.swift; sourceTree = "<group>"; };
 		BE0C439A2B98AC6E00050211 /* ActivityTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActivityTableViewCell.xib; sourceTree = "<group>"; };
 		BE39BB4A2B1CC75F0028382A /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
@@ -153,11 +159,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		BE0C43962B98ABA600050211 /* TableViewCells */ = {
+		BE02ADFB2BB4E898009B0EAF /* ActivityTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
 				BE0C43992B98AC6E00050211 /* ActivityTableViewCell.swift */,
 				BE0C439A2B98AC6E00050211 /* ActivityTableViewCell.xib */,
+			);
+			path = ActivityTableViewCell;
+			sourceTree = "<group>";
+		};
+		BE02ADFC2BB4E8AB009B0EAF /* ExperienceTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				BE02ADF72BB4E88D009B0EAF /* ExperienceTableViewCell.swift */,
+				BE02ADF82BB4E88D009B0EAF /* ExperienceTableViewCell.xib */,
+			);
+			path = ExperienceTableViewCell;
+			sourceTree = "<group>";
+		};
+		BE0C43962B98ABA600050211 /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				BE02ADFC2BB4E8AB009B0EAF /* ExperienceTableViewCell */,
+				BE02ADFB2BB4E898009B0EAF /* ActivityTableViewCell */,
 			);
 			path = TableViewCells;
 			sourceTree = "<group>";
@@ -191,6 +215,7 @@
 			children = (
 				BE4E0EC72B900A7A00C6C714 /* UserResponsModel.swift */,
 				BE02ADA42BB23A4A009B0EAF /* UserPostsResponseModel.swift */,
+				BE02ADFD2BB4EAE9009B0EAF /* UserExperiencesResponseModel.swift */,
 			);
 			path = ResponseModels;
 			sourceTree = "<group>";
@@ -417,6 +442,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE02ADF92BB4E88D009B0EAF /* ExperienceTableViewCell.xib in Resources */,
 				BEA92C552B1CBD9500A19EE9 /* Home.storyboard in Resources */,
 				BEA92C5B2B1CBDB400A19EE9 /* Notifications.storyboard in Resources */,
 				BEA92C5D2B1CBDC100A19EE9 /* Jobs.storyboard in Resources */,
@@ -450,11 +476,13 @@
 				BEEE86102AFCFA240076E557 /* LoginViewController.swift in Sources */,
 				BEA92C632B1CC2DD00A19EE9 /* PostViewController.swift in Sources */,
 				BE84258E2B1518B300D8B431 /* SignUpViewController.swift in Sources */,
+				BE02ADFA2BB4E88D009B0EAF /* ExperienceTableViewCell.swift in Sources */,
 				BE39BB4B2B1CC75F0028382A /* TabBarController.swift in Sources */,
 				BE9F42EE2AFBAADE00406755 /* ViewController.swift in Sources */,
 				BE84258C2B150EDF00D8B431 /* UserDefaults.swift in Sources */,
 				BE39BB512B1E1E640028382A /* UITextField.swift in Sources */,
 				BEA92C612B1CC2D400A19EE9 /* MyNetworkViewController.swift in Sources */,
+				BE02ADFE2BB4EAE9009B0EAF /* UserExperiencesResponseModel.swift in Sources */,
 				BE9F42EA2AFBAADE00406755 /* AppDelegate.swift in Sources */,
 				BE8425922B15238600D8B431 /* PasswordCodeViewController.swift in Sources */,
 				BE9F42EC2AFBAADE00406755 /* SceneDelegate.swift in Sources */,

@@ -14,6 +14,7 @@ class ProfileViewController: UIViewController {
     var userID: String? = "xnALn5QFPlJB9rTlVAJD"
     var user: UserResponsModel?
     var posts: [UserPostsResponseModel] = []
+    var experiences: [UserExperiencesResponseModel] = []
     let db = Firestore.firestore()
     let storage = Storage.storage()
     
@@ -48,12 +49,18 @@ class ProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        getUserInfo()
         activityTableView.delegate = self
         activityTableView.dataSource = self
-        getUserInfo()
         getUserPosts{ [weak self] posts in
             self?.posts = posts
             self?.activityTableView.reloadData()
+        }
+        experienceTableView.delegate = self
+        experienceTableView.dataSource = self
+        getUserExperiences{ [weak self] experiences in
+            self?.experiences = experiences
+            self?.experienceTableView.reloadData()
         }
     }
     
@@ -150,7 +157,6 @@ class ProfileViewController: UIViewController {
                             print("Error getting document: \(error)")
                         }
                     }
-                    self.activityTableView.reloadData()
                 } else {
                     print("There is not querySnapshot.documents ")
                 }
@@ -159,6 +165,27 @@ class ProfileViewController: UIViewController {
         }
     }
     
+    func getUserExperiences(completion: @escaping ([UserExperiencesResponseModel]) -> Void) {
+        guard let userID = userID else { return }
+        let userRef = db.collection("users").document(userID)
+        db.collection("experiences").whereField("userID", isEqualTo: userRef).getDocuments { querySnapshot, error in
+            if let querySnapshot = querySnapshot {
+                if querySnapshot.documents.count != 0 {
+                    for document in querySnapshot.documents {
+                        do {
+                            let experience = try document.data(as: UserExperiencesResponseModel.self)
+                            self.experiences.append(experience)
+                        } catch {
+                            print("Error getting document: \(error)")
+                        }
+                    }
+                } else {
+                    print("There is not querySnapshot.documents ")
+                }
+            }
+            completion(self.experiences)
+        }
+    }
 }
 
 extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
@@ -174,6 +201,16 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
                 posts.sort { $0.datePublished > $1.datePublished }
                 return 2
             }
+        } else if tableView == experienceTableView {
+            if experiences.isEmpty {
+                return 0
+            } else if experiences.count == 1 {
+                experiences.sort { $0.dateStart > $1.dateStart }
+                return 1
+            } else {
+                experiences.sort { $0.dateStart > $1.dateStart }
+                return 2
+            }
         }
         return 0
     }
@@ -182,9 +219,21 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
         if tableView == activityTableView {
             let cell = Bundle.main.loadNibNamed("ActivityTableViewCell", owner: self, options: nil)?.first as! ActivityTableViewCell
             if !posts.isEmpty {
-                cell.contentLabel.text = posts[0].content
+                cell.contentLabel.text = posts[indexPath.row].content
+                cell.postImageView.image = UIImage(named: "apple")
             }
-            cell.postImageView.image = UIImage(named: "apple")
+            return cell
+        } else if tableView == experienceTableView {
+            let cell = Bundle.main.loadNibNamed("ExperienceTableViewCell", owner: self, options: nil)?.first as! ExperienceTableViewCell
+            if !experiences.isEmpty {
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "MM.yyyy"
+                let startDate = dateFormatter.string(from: experiences[indexPath.row].dateStart)
+                let endDate = dateFormatter.string(from: experiences[indexPath.row].dateEnd)
+                cell.companyNameLabel.text = experiences[indexPath.row].company
+                cell.experienceImageView.image = UIImage(named: "apple")
+                cell.timeLabel.text = "\(startDate) - \(endDate)"
+            }
             return cell
         }
         return UITableViewCell()
@@ -192,6 +241,8 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if tableView == activityTableView {
+            return 100
+        } else if tableView == experienceTableView {
             return 100
         }
         return 0
