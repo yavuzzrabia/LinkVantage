@@ -17,6 +17,7 @@ class ProfileViewController: UIViewController {
     var experiences: [UserExperiencesResponseModel] = []
     var educations: [UserEducationResponseModel] = []
     var certfications: [UserLicenseCertficationResponseModel] = []
+    var volunteerings: [UserVolunteeringResponseModel] = []
     let db = Firestore.firestore()
     let storage = Storage.storage()
     
@@ -75,6 +76,12 @@ class ProfileViewController: UIViewController {
         getUserLicenseCertfications{ [weak self] certfications in
             self?.certfications = certfications
             self?.licenseCertficationTableView.reloadData()
+        }
+        volunteeringTableView.delegate = self
+        volunteeringTableView.dataSource = self
+        getUserVolunteerings{ [weak self] volunteerings in
+            self?.volunteerings = volunteerings
+            self?.volunteeringTableView.reloadData()
         }
     }
     
@@ -246,6 +253,28 @@ class ProfileViewController: UIViewController {
             completion(self.certfications)
         }
     }
+    
+    func getUserVolunteerings(completion: @escaping ([UserVolunteeringResponseModel]) -> Void){
+        guard let userID = userID else { return }
+        let userRef = db.collection("users").document(userID)
+        db.collection("volunteering").whereField("userID", isEqualTo: userRef).getDocuments { querySnapshot, error in
+            if let querySnapshot = querySnapshot {
+                if querySnapshot.documents.count != 0 {
+                    for document in querySnapshot.documents {
+                        do {
+                            let volunteering = try document.data(as: UserVolunteeringResponseModel.self)
+                            self.volunteerings.append(volunteering)
+                        } catch {
+                            print("Error getting document: \(error)")
+                        }
+                    }
+                } else {
+                    print("There is not querySnapshot.documents ")
+                }
+            }
+            completion(self.volunteerings)
+        }
+    }
 }
 
 extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
@@ -303,6 +332,19 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
                 licenseCertficationHeightConstraint.constant = 270
                return 2
             }
+        } else if tableView == volunteeringTableView {
+            if volunteerings.isEmpty {
+                volunteeringHeightConstraint.constant = 0
+                return 0
+            } else if volunteerings.count == 1 {
+                volunteerings.sort { $0.dateStart > $1.dateStart }
+                volunteeringHeightConstraint.constant = 170
+                return 1
+            } else {
+                volunteerings.sort { $0.dateStart > $1.dateStart }
+                volunteeringHeightConstraint.constant = 270
+               return 2
+            }
         }
         return 0
     }
@@ -352,6 +394,19 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
                 cell.companyImageView.image = UIImage(named: "apple")
             }
             return cell
+        } else if tableView == volunteeringTableView {
+            let cell = Bundle.main.loadNibNamed("VolunteeringTableViewCell", owner: self, options: nil)?.first as! VolunteeringTableViewCell
+            if !volunteerings.isEmpty {
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "MM.yyyy"
+                let dateStart = dateFormatter.string(from: volunteerings[indexPath.row].dateStart)
+                let dateEnd = dateFormatter.string(from: volunteerings[indexPath.row].dateEnd)
+                cell.roleLabel.text = volunteerings[indexPath.row].role
+                cell.organizationLabel.text = volunteerings[indexPath.row].organization
+                cell.dateLabel.text = "\(dateStart) - \(dateEnd)"
+                cell.organizationImage.image = UIImage(named: "apple")
+            }
+            return cell
         }
         return UITableViewCell()
     }
@@ -364,6 +419,8 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
         } else if tableView == educationTableView {
             return 100
         } else if tableView == licenseCertficationTableView {
+            return 100
+        }  else if tableView == volunteeringTableView {
             return 100
         }
         return 0
