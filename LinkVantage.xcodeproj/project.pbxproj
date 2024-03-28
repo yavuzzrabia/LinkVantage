@@ -11,6 +11,9 @@
 		BE02ADF92BB4E88D009B0EAF /* ExperienceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE02ADF82BB4E88D009B0EAF /* ExperienceTableViewCell.xib */; };
 		BE02ADFA2BB4E88D009B0EAF /* ExperienceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE02ADF72BB4E88D009B0EAF /* ExperienceTableViewCell.swift */; };
 		BE02ADFE2BB4EAE9009B0EAF /* UserExperiencesResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE02ADFD2BB4EAE9009B0EAF /* UserExperiencesResponseModel.swift */; };
+		BE02AE022BB4F836009B0EAF /* EducationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE02AE012BB4F836009B0EAF /* EducationTableViewCell.xib */; };
+		BE02AE032BB4F836009B0EAF /* EducationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE02AE002BB4F836009B0EAF /* EducationTableViewCell.swift */; };
+		BE02AE052BB4F8CC009B0EAF /* UserEducationResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE02AE042BB4F8CC009B0EAF /* UserEducationResponseModel.swift */; };
 		BE0C439B2B98AC6E00050211 /* ActivityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0C43992B98AC6E00050211 /* ActivityTableViewCell.swift */; };
 		BE0C439C2B98AC6E00050211 /* ActivityTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE0C439A2B98AC6E00050211 /* ActivityTableViewCell.xib */; };
 		BE1954192B27C79100C4C571 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = BE1954182B27C79100C4C571 /* GoogleSignIn */; };
@@ -81,6 +84,9 @@
 		BE02ADF72BB4E88D009B0EAF /* ExperienceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceTableViewCell.swift; sourceTree = "<group>"; };
 		BE02ADF82BB4E88D009B0EAF /* ExperienceTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExperienceTableViewCell.xib; sourceTree = "<group>"; };
 		BE02ADFD2BB4EAE9009B0EAF /* UserExperiencesResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserExperiencesResponseModel.swift; sourceTree = "<group>"; };
+		BE02AE002BB4F836009B0EAF /* EducationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EducationTableViewCell.swift; sourceTree = "<group>"; };
+		BE02AE012BB4F836009B0EAF /* EducationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EducationTableViewCell.xib; sourceTree = "<group>"; };
+		BE02AE042BB4F8CC009B0EAF /* UserEducationResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEducationResponseModel.swift; sourceTree = "<group>"; };
 		BE0C43992B98AC6E00050211 /* ActivityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTableViewCell.swift; sourceTree = "<group>"; };
 		BE0C439A2B98AC6E00050211 /* ActivityTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActivityTableViewCell.xib; sourceTree = "<group>"; };
 		BE39BB4A2B1CC75F0028382A /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
@@ -177,9 +183,19 @@
 			path = ExperienceTableViewCell;
 			sourceTree = "<group>";
 		};
+		BE02ADFF2BB4F817009B0EAF /* EducationTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				BE02AE002BB4F836009B0EAF /* EducationTableViewCell.swift */,
+				BE02AE012BB4F836009B0EAF /* EducationTableViewCell.xib */,
+			);
+			path = EducationTableViewCell;
+			sourceTree = "<group>";
+		};
 		BE0C43962B98ABA600050211 /* TableViewCells */ = {
 			isa = PBXGroup;
 			children = (
+				BE02ADFF2BB4F817009B0EAF /* EducationTableViewCell */,
 				BE02ADFC2BB4E8AB009B0EAF /* ExperienceTableViewCell */,
 				BE02ADFB2BB4E898009B0EAF /* ActivityTableViewCell */,
 			);
@@ -215,6 +231,7 @@
 			children = (
 				BE4E0EC72B900A7A00C6C714 /* UserResponsModel.swift */,
 				BE02ADA42BB23A4A009B0EAF /* UserPostsResponseModel.swift */,
+				BE02AE042BB4F8CC009B0EAF /* UserEducationResponseModel.swift */,
 				BE02ADFD2BB4EAE9009B0EAF /* UserExperiencesResponseModel.swift */,
 			);
 			path = ResponseModels;
@@ -444,6 +461,7 @@
 			files = (
 				BE02ADF92BB4E88D009B0EAF /* ExperienceTableViewCell.xib in Resources */,
 				BEA92C552B1CBD9500A19EE9 /* Home.storyboard in Resources */,
+				BE02AE022BB4F836009B0EAF /* EducationTableViewCell.xib in Resources */,
 				BEA92C5B2B1CBDB400A19EE9 /* Notifications.storyboard in Resources */,
 				BEA92C5D2B1CBDC100A19EE9 /* Jobs.storyboard in Resources */,
 				BE9F42F62AFBAAE000406755 /* LaunchScreen.storyboard in Resources */,
@@ -469,12 +487,14 @@
 				BE4E0EC82B900A7A00C6C714 /* UserResponsModel.swift in Sources */,
 				BEA92C652B1CC2E600A19EE9 /* NotificationsViewController.swift in Sources */,
 				BED7ACA82B75876F001A58A4 /* ProfileViewController.swift in Sources */,
+				BE02AE032BB4F836009B0EAF /* EducationTableViewCell.swift in Sources */,
 				BE02ADA52BB23A4A009B0EAF /* UserPostsResponseModel.swift in Sources */,
 				BE0C439B2B98AC6E00050211 /* ActivityTableViewCell.swift in Sources */,
 				BE39BB532B1E21920028382A /* String.swift in Sources */,
 				BE8425902B15235C00D8B431 /* ForgotPasswordViewController.swift in Sources */,
 				BEEE86102AFCFA240076E557 /* LoginViewController.swift in Sources */,
 				BEA92C632B1CC2DD00A19EE9 /* PostViewController.swift in Sources */,
+				BE02AE052BB4F8CC009B0EAF /* UserEducationResponseModel.swift in Sources */,
 				BE84258E2B1518B300D8B431 /* SignUpViewController.swift in Sources */,
 				BE02ADFA2BB4E88D009B0EAF /* ExperienceTableViewCell.swift in Sources */,
 				BE39BB4B2B1CC75F0028382A /* TabBarController.swift in Sources */,

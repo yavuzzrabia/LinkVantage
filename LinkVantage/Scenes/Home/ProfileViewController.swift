@@ -15,6 +15,7 @@ class ProfileViewController: UIViewController {
     var user: UserResponsModel?
     var posts: [UserPostsResponseModel] = []
     var experiences: [UserExperiencesResponseModel] = []
+    var educations: [UserEducationResponseModel] = []
     let db = Firestore.firestore()
     let storage = Storage.storage()
     
@@ -61,6 +62,12 @@ class ProfileViewController: UIViewController {
         getUserExperiences{ [weak self] experiences in
             self?.experiences = experiences
             self?.experienceTableView.reloadData()
+        }
+        educationTableView.delegate = self
+        educationTableView.dataSource = self
+        getUserEducations{ [weak self] educations in
+            self?.educations = educations
+            self?.educationTableView.reloadData()
         }
     }
     
@@ -127,6 +134,7 @@ class ProfileViewController: UIViewController {
                           print("Error getting profile image data: \(error)")
                       } else {
                           self.profileImage.image = UIImage(data: data!)
+                          self.profileImage.contentMode = .scaleAspectFill
                       }
                     }
                     backgroundImageRef.getData(maxSize: 1 * 1024 * 1024) { data, error in
@@ -134,6 +142,7 @@ class ProfileViewController: UIViewController {
                           print("Error getting background image data: \(error)")
                       } else {
                           self.backgroundImage.image = UIImage(data: data!)
+                          self.backgroundImage.contentMode = .scaleAspectFill
                       }
                     }
                 } catch {
@@ -186,6 +195,28 @@ class ProfileViewController: UIViewController {
             completion(self.experiences)
         }
     }
+    
+    func getUserEducations(completion: @escaping ([UserEducationResponseModel]) -> Void) {
+        guard let userID = userID else { return }
+        let userRef = db.collection("users").document(userID)
+        db.collection("educations").whereField("userID", isEqualTo: userRef).getDocuments { querySnapshot, error in
+            if let querySnapshot = querySnapshot {
+                if querySnapshot.documents.count != 0 {
+                    for document in querySnapshot.documents {
+                        do {
+                            let education = try document.data(as: UserEducationResponseModel.self)
+                            self.educations.append(education)
+                        } catch {
+                            print("Error getting document: \(error)")
+                        }
+                    }
+                } else {
+                    print("There is not querySnapshot.documents ")
+                }
+            }
+            completion(self.educations)
+        }
+    }
 }
 
 extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
@@ -193,23 +224,42 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if tableView == activityTableView {
             if posts.isEmpty {
+                activityHeightConstraint.constant = 0
                 return 0
             } else if posts.count == 1 {
                 posts.sort { $0.datePublished > $1.datePublished }
+                activityHeightConstraint.constant = 170
                 return 1
             } else {
                 posts.sort { $0.datePublished > $1.datePublished }
+                activityHeightConstraint.constant = 270
                 return 2
             }
         } else if tableView == experienceTableView {
             if experiences.isEmpty {
+                experienceHeightConstraint.constant = 0
                 return 0
             } else if experiences.count == 1 {
                 experiences.sort { $0.dateStart > $1.dateStart }
+                experienceHeightConstraint.constant = 170
                 return 1
             } else {
                 experiences.sort { $0.dateStart > $1.dateStart }
+                experienceHeightConstraint.constant = 270
                 return 2
+            }
+        } else if tableView == educationTableView {
+            if educations.isEmpty {
+                educationHeightConstraint.constant = 0
+                return 0
+            } else if educations.count == 1 {
+                educations.sort { $0.dateStart > $1.dateStart }
+                educationHeightConstraint.constant = 170
+                return 1
+            } else {
+                educations.sort { $0.dateStart > $1.dateStart }
+                educationHeightConstraint.constant = 270
+               return 2
             }
         }
         return 0
@@ -235,6 +285,19 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
                 cell.timeLabel.text = "\(startDate) - \(endDate)"
             }
             return cell
+        } else if tableView == educationTableView {
+            let cell = Bundle.main.loadNibNamed("EducationTableViewCell", owner: self, options: nil)?.first as! EducationTableViewCell
+            if !educations.isEmpty {
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "MM.yyyy"
+                let startDate = dateFormatter.string(from: educations[indexPath.row].dateStart)
+                let endDate = dateFormatter.string(from: educations[indexPath.row].dateEnd)
+                cell.schoolNameLabel.text = educations[indexPath.row].school
+                cell.schoolDepartmentLabel.text = educations[indexPath.row].department
+                cell.schoolImageView.image = UIImage(named: "apple")
+                cell.timeLabel.text = "\(startDate) - \(endDate)"
+            }
+            return cell
         }
         return UITableViewCell()
     }
@@ -243,6 +306,8 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
         if tableView == activityTableView {
             return 100
         } else if tableView == experienceTableView {
+            return 100
+        } else if tableView == educationTableView {
             return 100
         }
         return 0
