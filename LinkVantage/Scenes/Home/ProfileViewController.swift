@@ -18,6 +18,7 @@ class ProfileViewController: UIViewController {
     var educations: [UserEducationResponseModel] = []
     var certfications: [UserLicenseCertficationResponseModel] = []
     var volunteerings: [UserVolunteeringResponseModel] = []
+    var skills: [UserSkillResponsModel] = []
     let db = Firestore.firestore()
     let storage = Storage.storage()
     
@@ -82,6 +83,12 @@ class ProfileViewController: UIViewController {
         getUserVolunteerings{ [weak self] volunteerings in
             self?.volunteerings = volunteerings
             self?.volunteeringTableView.reloadData()
+        }
+        skillTableView.delegate = self
+        skillTableView.dataSource = self
+        getUserSkills{ [weak self] skills in
+            self?.skills = skills
+            self?.skillTableView.reloadData()
         }
     }
     
@@ -275,6 +282,28 @@ class ProfileViewController: UIViewController {
             completion(self.volunteerings)
         }
     }
+    
+    func getUserSkills(completion: @escaping ([UserSkillResponsModel]) -> Void){
+        guard let userID = userID else { return }
+        let userRef = db.collection("users").document(userID)
+        db.collection("skills").whereField("userID", isEqualTo: userRef).getDocuments { querySnapshot, error in
+            if let querySnapshot = querySnapshot {
+                if querySnapshot.documents.count != 0 {
+                    for document in querySnapshot.documents {
+                        do {
+                            let skill = try document.data(as: UserSkillResponsModel.self)
+                            self.skills.append(skill)
+                        } catch {
+                            print("Error getting document: \(error)")
+                        }
+                    }
+                } else {
+                    print("There is not querySnapshot.documents ")
+                }
+            }
+            completion(self.skills)
+        }
+    }
 }
 
 extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
@@ -345,6 +374,17 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
                 volunteeringHeightConstraint.constant = 270
                return 2
             }
+        } else if tableView == skillTableView {
+            if skills.isEmpty {
+                skillHeightconstraint.constant = 0
+                return 0
+            } else if skills.count == 1 {
+                skillHeightconstraint.constant = 130
+                return 1
+            } else {
+                skillHeightconstraint.constant = 150
+               return 2
+            }
         }
         return 0
     }
@@ -407,6 +447,12 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
                 cell.organizationImage.image = UIImage(named: "apple")
             }
             return cell
+        } else if tableView == skillTableView {
+            let cell = Bundle.main.loadNibNamed("SkillTableViewCell", owner: self, options: nil)?.first as! SkillTableViewCell
+            if !skills.isEmpty {
+                cell.skillLabel.text = skills[indexPath.row].skill
+            }
+            return cell
         }
         return UITableViewCell()
     }
@@ -420,8 +466,10 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
             return 100
         } else if tableView == licenseCertficationTableView {
             return 100
-        }  else if tableView == volunteeringTableView {
+        } else if tableView == volunteeringTableView {
             return 100
+        } else if tableView == skillTableView {
+            return 45
         }
         return 0
     }
