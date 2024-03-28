@@ -16,6 +16,9 @@
 		BE02AE052BB4F8CC009B0EAF /* UserEducationResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE02AE042BB4F8CC009B0EAF /* UserEducationResponseModel.swift */; };
 		BE0C439B2B98AC6E00050211 /* ActivityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0C43992B98AC6E00050211 /* ActivityTableViewCell.swift */; };
 		BE0C439C2B98AC6E00050211 /* ActivityTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE0C439A2B98AC6E00050211 /* ActivityTableViewCell.xib */; };
+		BE157F342BB5B6370052A0B2 /* LicenseCertficationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE157F332BB5B6370052A0B2 /* LicenseCertficationTableViewCell.xib */; };
+		BE157F352BB5B6370052A0B2 /* LicenseCertficationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE157F322BB5B6370052A0B2 /* LicenseCertficationTableViewCell.swift */; };
+		BE157F372BB5B65D0052A0B2 /* UserLicenseCertficationResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE157F362BB5B65D0052A0B2 /* UserLicenseCertficationResponseModel.swift */; };
 		BE1954192B27C79100C4C571 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = BE1954182B27C79100C4C571 /* GoogleSignIn */; };
 		BE19541B2B27C79100C4C571 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = BE19541A2B27C79100C4C571 /* GoogleSignInSwift */; };
 		BE39BB4B2B1CC75F0028382A /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE39BB4A2B1CC75F0028382A /* TabBarController.swift */; };
@@ -89,6 +92,9 @@
 		BE02AE042BB4F8CC009B0EAF /* UserEducationResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEducationResponseModel.swift; sourceTree = "<group>"; };
 		BE0C43992B98AC6E00050211 /* ActivityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTableViewCell.swift; sourceTree = "<group>"; };
 		BE0C439A2B98AC6E00050211 /* ActivityTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActivityTableViewCell.xib; sourceTree = "<group>"; };
+		BE157F322BB5B6370052A0B2 /* LicenseCertficationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenseCertficationTableViewCell.swift; sourceTree = "<group>"; };
+		BE157F332BB5B6370052A0B2 /* LicenseCertficationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LicenseCertficationTableViewCell.xib; sourceTree = "<group>"; };
+		BE157F362BB5B65D0052A0B2 /* UserLicenseCertficationResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLicenseCertficationResponseModel.swift; sourceTree = "<group>"; };
 		BE39BB4A2B1CC75F0028382A /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		BE39BB502B1E1E640028382A /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 		BE39BB522B1E21920028382A /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
@@ -195,11 +201,21 @@
 		BE0C43962B98ABA600050211 /* TableViewCells */ = {
 			isa = PBXGroup;
 			children = (
+				BE157F312BB5B61F0052A0B2 /* LicenseCertficationTableViewCell */,
 				BE02ADFF2BB4F817009B0EAF /* EducationTableViewCell */,
 				BE02ADFC2BB4E8AB009B0EAF /* ExperienceTableViewCell */,
 				BE02ADFB2BB4E898009B0EAF /* ActivityTableViewCell */,
 			);
 			path = TableViewCells;
+			sourceTree = "<group>";
+		};
+		BE157F312BB5B61F0052A0B2 /* LicenseCertficationTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				BE157F322BB5B6370052A0B2 /* LicenseCertficationTableViewCell.swift */,
+				BE157F332BB5B6370052A0B2 /* LicenseCertficationTableViewCell.xib */,
+			);
+			path = LicenseCertficationTableViewCell;
 			sourceTree = "<group>";
 		};
 		BE4E0EC22B900A3D00C6C714 /* Connection */ = {
@@ -233,6 +249,7 @@
 				BE02ADA42BB23A4A009B0EAF /* UserPostsResponseModel.swift */,
 				BE02AE042BB4F8CC009B0EAF /* UserEducationResponseModel.swift */,
 				BE02ADFD2BB4EAE9009B0EAF /* UserExperiencesResponseModel.swift */,
+				BE157F362BB5B65D0052A0B2 /* UserLicenseCertficationResponseModel.swift */,
 			);
 			path = ResponseModels;
 			sourceTree = "<group>";
@@ -473,6 +490,7 @@
 				BE831F462AFBB93E00F3E566 /* Authentication.storyboard in Resources */,
 				BE0C439C2B98AC6E00050211 /* ActivityTableViewCell.xib in Resources */,
 				BE8425962B174E8600D8B431 /* GoogleService-Info.plist in Resources */,
+				BE157F342BB5B6370052A0B2 /* LicenseCertficationTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -493,6 +511,7 @@
 				BE39BB532B1E21920028382A /* String.swift in Sources */,
 				BE8425902B15235C00D8B431 /* ForgotPasswordViewController.swift in Sources */,
 				BEEE86102AFCFA240076E557 /* LoginViewController.swift in Sources */,
+				BE157F352BB5B6370052A0B2 /* LicenseCertficationTableViewCell.swift in Sources */,
 				BEA92C632B1CC2DD00A19EE9 /* PostViewController.swift in Sources */,
 				BE02AE052BB4F8CC009B0EAF /* UserEducationResponseModel.swift in Sources */,
 				BE84258E2B1518B300D8B431 /* SignUpViewController.swift in Sources */,
@@ -504,6 +523,7 @@
 				BEA92C612B1CC2D400A19EE9 /* MyNetworkViewController.swift in Sources */,
 				BE02ADFE2BB4EAE9009B0EAF /* UserExperiencesResponseModel.swift in Sources */,
 				BE9F42EA2AFBAADE00406755 /* AppDelegate.swift in Sources */,
+				BE157F372BB5B65D0052A0B2 /* UserLicenseCertficationResponseModel.swift in Sources */,
 				BE8425922B15238600D8B431 /* PasswordCodeViewController.swift in Sources */,
 				BE9F42EC2AFBAADE00406755 /* SceneDelegate.swift in Sources */,
 				BE8425942B1523EF00D8B431 /* NewPasswordViewController.swift in Sources */,
